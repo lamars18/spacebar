@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { Component } from 'react';
-import Wrapper from "../Wrapper";
-import CardBtn from "../CardBtn";
+// import Wrapper from "../Wrapper";
+// import CardBtn from "../CardBtn";
 import "./Articles.css";
 import moment from 'moment';
 
@@ -54,7 +54,7 @@ class Articles extends Component {
 
       <div className="card card-body mb-3">
         <h5 className="text-left">{this.props.title} 
-          <i className="fas fa-sort-down" style={{ cursor: 'pointer' }}></i>
+          <i className="fas fa-caret-down ml-2" style={{ cursor: 'pointer' }}></i>
           <i className="fas fa-times" style={{cursor: 'pointer', float: 'right', color: 'red'}}></i>
           <a href="/contact/edit/1">
             <i className="fas fa-pencil-alt" style={{cursor: 'pointer', float: 'right', color: 'black', marginRight: '1rem'}}></i>
