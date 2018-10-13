@@ -3,9 +3,9 @@
 ///////////////////
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import axios from 'axios';
 //components
-import Jumbotron from './components/Jumbotron';
+import Navigation from './components/Navigation';
+import Header from './components/Header';
 import Footer from './components/Footer';
 // pages
 import Home from './components/Home';
@@ -25,6 +25,9 @@ class App extends Component {
   //////////////////////////////////////////////
   state = {
     // articles: ''
+    appName: "SpaceBar",
+    orgName: "GT Project Team",
+    year: new Date().getFullYear()
   };
 
   async componentDidMount() {
@@ -42,11 +45,14 @@ class App extends Component {
       <Provider>
         <Router>
           <div className="App fluid-container">
-            <Jumbotron
-              title="SpaceBar"
-              titleicon=""
-              message="Enter some content here..."
-            ></Jumbotron>
+            <Navigation 
+              branding={this.state.appName}
+            />
+            <Header
+              title={this.state.appName}
+              titleicon="fas fa-rocket"
+              message="Discover what's out there."
+            ></Header>
 
             <Switch>
               <Route exact path='/' component={Home} />
@@ -55,7 +61,11 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
 
-            <Footer></Footer>
+            <Footer
+              year={this.state.year}
+              orgName={this.state.orgName}
+              >
+            </Footer>
           </div>
         </Router>
       </Provider>

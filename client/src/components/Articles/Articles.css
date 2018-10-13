@@ -1,4 +1,4 @@
-/* .card {
+/* .article {
   background-size: cover;
   background-position: center;
   background-clip: content-box;
@@ -7,22 +7,14 @@
   position: relative;
   margin: 0 auto;
   margin-top: 20px;
-} */
+}
 
-.card.sized-card {
-  background-size: cover;
-  background-position: center;
-  background-clip: content-box;
-  border: 6px solid white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  position: relative;
-  margin: 0 auto;
-  margin-top: 20px;
+.article.sized-card {
   height: 500px;
   width: 500px;
-}
+} */
 
 /* remove the blue outline around buttons */
-.card.sized-card button:focus {
+/* .article.sized-card button:focus {
   outline:0;
-}
+} */
