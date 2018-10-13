@@ -13,7 +13,6 @@ let routeCalled = 0;
 /////////////////
 module.exports = function(app) {
 
-  routeCalled += 1;
   // console.log("route called: " + app.router.getCurrentPathname());
   console.log("route call count: " + routeCalled);
 
@@ -24,7 +23,6 @@ module.exports = function(app) {
 
     console.log("route: all articles");
     // console.log(JSON.stringify(req.body));
-    console.log('routeCalled', routeCalled);
 
     // get all articles and associated comments
     db.Article.
@@ -70,21 +68,16 @@ module.exports = function(app) {
 
     // Save a new Example using the data object
     db.Article.create({
-      title: req.body.title,
+      title: req.body.title.trim(),
       summary: req.body.summary.trim(),
-      url: req.body.url,
-      author: req.body.author,
+      url: req.body.url.trim(),
+      author: req.body.author.trim(),
       date: req.body.date
     })
     .then(function(savedData) {
       // If saved successfully, print the new document to the console
       // console.log(savedData);
 
-      // send to handlebars
-      // var hbsObject = {
-      //   articles: savedData
-      // };
-      // res.render("index", hbsObject);
       res.send(savedData);
     })
     .catch(function(err) {
@@ -144,7 +137,7 @@ module.exports = function(app) {
     db.ArticleComment.create(req.body)
       .then(function(dbComment) {
         // If a ArticleComment was created successfully, find the Article and push the new ArticleComment _id to the Articles `comments` array
-        // { new: true } tells the query that we want it to return the updated Article -- it returns the original by default
+        // { new: true } tells the query we want it to return the updated Article -- it returns the original by default
         // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
         return db.Article.findOneAndUpdate({_id: article_id}, { $push: { comments: dbComment._id } }, { new: true });
       })

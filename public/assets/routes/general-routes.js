@@ -89,8 +89,6 @@ module.exports = function(app) {
   };
 
   const loadScrapedData = function(err,articleList) {
-// const loadScrapedData = ()=>new Promise(
-//   (resolve, reject)=> {
 
     console.log("loadScrapedData...");
     // console.log(JSON.stringify(articleList));
@@ -117,14 +115,14 @@ module.exports = function(app) {
                     db.Article.create({
                                 title: item.title.trim(),
                                 summary: item.summary.trim(),
-                                url: item.url,                              // website url has aleady been appended at this point
-                                author: item.author,
+                                url: item.url.trim(),                              // website url has aleady been appended at this point
+                                author: item.author.trim(),
                                 date: item.date
                               })
                               .then(function(savedData) {
                                 // if saved successfully
                                 // console.log(savedData);
-                                newArticleList.push(savedData);
+                                // newArticleList.push(savedData);
                               })
                               .catch(function(err) {
                                 // If an error occurs, log the error message
@@ -135,15 +133,10 @@ module.exports = function(app) {
                 .catch(function(err) {
                   // If an error occurs, log the error message
                   console.log("Err: " + err.message);
-
-                  reject(new Error("Produced an error."));
                 });
     });  // end foreach
 
-    return newArticleList;
-    
   }
-// ) // remove
 
   //////////////////////
   // Routes 
@@ -157,15 +150,10 @@ module.exports = function(app) {
   // GET scrape route to retrieve articles
   app.get("/api/scrape", function(req, res) {
     console.log("route: in scrape articles");
-
     
     // calls function to scrape the Smashing Magazine site, which also contains a callback function to load the data to Mongo
     scrapeSmashingMagazineSite(loadScrapedData)
-      // .then ((data)  => {
-        // once the data is loaded, query it
-        res.redirect("/api/articles");
-        // res.send();
-      // });
+    res.redirect("/api/articles");
   });
   
   // GET clear all articles (and their associated comments) route

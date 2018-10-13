@@ -77,6 +77,7 @@ app.use('/', function (req, res, next) {
   console.log("----------------------------");
   console.log("Original Url: " + req.originalUrl);
   console.log("Base Url: " + req.baseUrl);
+  console.log("Path: " + req.path);
   console.log("----------------------------");
   next();
 });
@@ -85,8 +86,6 @@ app.use('/', function (req, res, next) {
 //auth required or redirect
 ////////////////////////////////
 //  app.use('/api/account', function(req, res, next) {
-//   // console.log(req.path);
-//   // console.log(req.originalUrl)
 //   if ( !req.session.user ) {
 //     res.redirect('/login?ref='+req.path);
 //   } else {
@@ -107,9 +106,9 @@ app.use(routes);
 //     res.send({ express: 'Hello From Express, Jenni' });
 //   });
   
-  // app.get('/api/art', (req, res) => {
-  //     res.send({ express: 'My art route!' });
-  //   });
+// app.get('/api/art', (req, res) => {
+//     res.send({ express: 'My art route!' });
+//   });
 
 /////////////////////////////////////
 // handle production environment
