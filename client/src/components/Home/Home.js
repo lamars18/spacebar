@@ -4,6 +4,7 @@ import { Consumer } from '../../context';
 
 import Wrapper from "../Wrapper";
 import Card from "../Card";
+import Articles from "../Articles";
 import "./Home.css";
 // import articles from "./articlesTemp.json";
 
@@ -50,6 +51,26 @@ class Home extends Component {
 
           <div id="blog-section" className="col-md-4 container">
             <h6>SECTION 2</h6>
+            <Wrapper>
+              <Consumer>
+                { (value) => (    
+                  <React.Fragment>
+                    {value.articles.map(articleItem => (
+                        <Articles
+                        id={articleItem._id}
+                        key={articleItem._id}
+                        title={articleItem.title}
+                        date={articleItem.date}
+                        url={articleItem.url}
+                        summary={articleItem.summary}
+                        author={articleItem.author}
+                        comments={articleItem.comments}
+                        />
+                    ))} 
+                  </React.Fragment>
+                ) }
+              </Consumer>
+            </Wrapper>
           </div>
 
           <div id="chat-section" className="col-md-4 container">
