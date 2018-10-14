@@ -1,7 +1,7 @@
 import React from "react";
-import "./CardBtn.css";
+import "./BtnRound.css";
 
-const CardBtn = props => (
+const BtnRound = props => (
 
   <button
     onClick={props.onClick}
@@ -13,4 +13,4 @@ const CardBtn = props => (
   </button>
 );
 
-export default CardBtn;
+export default BtnRound;

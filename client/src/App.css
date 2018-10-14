@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+
 /* 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -32,7 +33,7 @@
 } */
 
 html,body {
-  color: #2F2F28;     /* match app-bg-color-2 */
+  color: #2F2F28;     /* match app-bg-color-4 */
 }
 
 .app-display-4 {
@@ -120,4 +121,20 @@ a.app-color-6:hover {
 
 a:hover {
   filter: brightness(80%);
+}
+
+button {
+  filter: opacity(.8);
+}
+button:hover {
+  filter: opacity(1.0);
+}
+button:focus {
+  outline: none;
+}
+
+.app-btn-primary {
+  color: #fff;
+  background-color: #31A2AC;
+  border-color: 31A2AC;
 }

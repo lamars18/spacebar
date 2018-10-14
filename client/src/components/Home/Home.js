@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Consumer } from '../../context';
 
 import Wrapper from "../Wrapper";
-import Card from "../Card";
 import Articles from "../Articles";
 import "./Home.css";
 // import articles from "./articlesTemp.json";
@@ -83,27 +82,7 @@ class Home extends Component {
 
           <div id="blog-section" className="col-md-3 container">
             <h6 className="app-display-4">Posts</h6>
-            <Wrapper>
-              <Consumer>
-                { (value) => (    
-                  <React.Fragment>
-                    {value.articles.map(articleItem => (
-                        <Card
-                          id={articleItem._id}
-                          key={articleItem._id}
-                          title={articleItem.title}
-                          date={articleItem.date}
-                          url={articleItem.url}
-                          summary={articleItem.summary}
-                          author={articleItem.author}
-                          comments={articleItem.comments}
-                          // onClick={ e => this.handleImageSelected(e, articleItem.id)}
-                        />
-                      ))}
-                  </React.Fragment>
-                ) }
-              </Consumer>
-            </Wrapper>
+
           </div>
 
           <div id="chat-section" className="col-md-2 container">

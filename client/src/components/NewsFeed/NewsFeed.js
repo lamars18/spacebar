@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Wrapper from "../Wrapper";
-import Card from "../Card";
+import ArticleItem from "../ArticleItem";
 import "./NewsFeed.css";
 import articles from "./articlesTemp.json";
 
@@ -21,7 +21,7 @@ class NewsFeed extends Component {
         NEWSFEED PAGE
         <Wrapper>
           {this.state.articles.map(articleItem => (
-            <Card
+            <ArticleItem
               id={articleItem.id}
               key={articleItem.id}
               title={articleItem.title}
