@@ -123,13 +123,23 @@ a:hover {
   filter: brightness(80%);
 }
 
-button {
+button, a {
   filter: opacity(.8);
 }
-button:hover {
+/* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
+/* a > i,button > i {
+  align-items:center;
+  justify-content:center;
+  text-align: center;
+  vertical-align: middle;
+} */
+
+button:hover,
+a:hover {
   filter: opacity(1.0);
 }
-button:focus {
+button:focus,
+a:focus {
   outline: none;
 }
 
@@ -137,4 +147,8 @@ button:focus {
   color: #fff;
   background-color: #31A2AC;
   border-color: 31A2AC;
+}
+
+p {
+  font-size: 14px;
 }

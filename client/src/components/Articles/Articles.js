@@ -1,39 +1,9 @@
 import React, { Component } from 'react';
-import { Consumer } from '../../context';
+// import { Consumer } from '../../context';
 
-// import Wrapper from "../Wrapper";
-// import CardBtn from "../CardBtn";
 import ArticleItem from "../ArticleItem";
 import "./Articles.css";
 import moment from 'moment';
-
-// load up a series of button definitions
-// const cardButtons = [
-//   {
-//     "id": 1,
-//     "datavalue": "read",
-//     "title": "Read",
-//     "icon": "fas fa-book-open"
-//   },
-//   {
-//     "id": 2,
-//     "datavalue": "save",
-//     "title": "Save",
-//     "icon": "fas fa-thumbtack"
-//   },
-//   {
-//     "id": 3,
-//     "datavalue": "delete",
-//     "title": "Delete",
-//     "icon": "far fa-trash-alt"
-//   },
-//   {
-//     "id": 4,
-//     "datavalue": "comment",
-//     "title": "Comment",
-//     "icon": "far fa-comments fa-lg"
-//   }
-// ];
 
 class Articles extends Component {
 
@@ -41,9 +11,7 @@ class Articles extends Component {
   // handle state
   ///////////////////////////
 
-  // load the images from the json array
-  state = {
-    // cardButtons: cardButtons,
+   state = {
     comments: []
   };
   
@@ -52,11 +20,13 @@ class Articles extends Component {
   formatDate = (date) => moment.utc(date).format('MM/DD/YYYY');
 
   render() {
+    const {_id, title, date, url, summary, author, comments} = this.props;
+
     return (
 
       <div className="card card-body mb-3">
 
-        <h6 className="text-left">{this.props.title} 
+        <h6 className="text-left">{title} 
           <i className="fas fa-caret-down ml-2" style={{ cursor: 'pointer' }}></i>
           <i className="fas fa-times app-color-2" style={{cursor: 'pointer', float: 'right'}}></i>
           <a href="/contact/edit/1">
@@ -64,27 +34,18 @@ class Articles extends Component {
           </a>
         </h6>
 
-        <small className="text-left text-muted">Written by {this.props.author} on {this.formatDate(this.props.date)}</small>
+        <small className="text-left text-muted">Written by {author} on {this.formatDate(date)}</small>
 
-        <Consumer>
-          { (value) => (    
-            <React.Fragment>
-              {value.articles.map(articleItem => (
-                <ArticleItem
-                  id={articleItem._id}
-                  key={articleItem._id}
-                  title={articleItem.title}
-                  date={articleItem.date}
-                  url={articleItem.url}
-                  summary={articleItem.summary}
-                  author={articleItem.author}
-                  comments={articleItem.comments}
-                />
-
-              ))}
-            </React.Fragment>
-          ) }
-        </Consumer>
+        <ArticleItem
+          id={_id}
+          key={_id}
+          title={title}
+          date={date}
+          url={url}
+          summary={summary}
+          author={author}
+          comments={comments}
+        />
 
       </div>
 

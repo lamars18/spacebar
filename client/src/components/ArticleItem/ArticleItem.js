@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
+
 import Wrapper from "../Wrapper";
 import BtnRound from "../BtnRound";
 
 const cardButtons = [
   {
     "id": 1,
+    "type": "link",
     "datavalue": "read",
     "title": "Read",
     "icon": "fas fa-book-open"
   },
   {
     "id": 2,
+    "type": "button",
     "datavalue": "save",
     "title": "Save",
     "icon": "fas fa-thumbtack"
   },
   {
     "id": 3,
+    "type": "button",
     "datavalue": "delete",
     "title": "Delete",
     "icon": "far fa-trash-alt"
   },
   {
     "id": 4,
+    "type": "button",
     "datavalue": "comment",
     "title": "Comment",
     "icon": "far fa-comments fa-lg"
@@ -43,29 +48,52 @@ class ArticleItem extends Component {
 
 
   render() {
+    const {summary, url, comments} = this.props;
+
     return (
 
       <div> 
 
         <hr></hr>
-        <p className="card-text">{this.props.summary}</p>
+        <p className="card-text">{summary}</p>
         
         <div className="mt-auto">
-          <p className="text-right mb-1"><small><span id="comment-length-{this.props._id}">{this.state.comments.length}</span> Comments</small></p>
+          <p className="text-right mb-1">
+            <small><span id="comment-length-{this.props._id}">{comments.length}</span> Comments</small>
+          </p>
+
           <Wrapper>
-            {this.state.cardButtons.map(cardBtn => (
-              <BtnRound
-                id={cardBtn.id}
-                key={cardBtn.id}
-                data-value={cardBtn.datavalue}
-                title={cardBtn.title}
-                icon={cardBtn.icon}
-                // url={this.props.url}
-                // style={{ opacity: props.image ? 1 : 0 }}
-                onClick={this.props.handleBtnClick}
-              />
+            {/* <a target="_blank" href={url} class="btn btn-success mb-2 mx-1"></a> */}
+            {this.state.cardButtons
+              .filter(btn => btn.type === "link")
+              .map(linkBtn => (
+                <a 
+                  key={linkBtn.id}
+                  href={url} 
+                  className={`card-btn mt-auto app-border-color-1 bg-white app-color-1 `}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  role="button"
+                >
+                  <i className={`${linkBtn.icon} mt-3`} aria-hidden="true" style={{verticalAlign: 'middle'}} />                    
+                </a>
             ))}
-          </Wrapper>
+
+            {this.state.cardButtons
+              .filter(btn => btn.type !== "link")
+              .map(cardBtn => (
+                <BtnRound
+                  id={cardBtn.id}
+                  key={cardBtn.id}
+                  data-value={cardBtn.datavalue}
+                  title={cardBtn.title}
+                  icon={cardBtn.icon}
+                  url= {url ? url : null}
+                  // onClick={this.props.handleBtnClick}
+                />
+            ))}
+            </Wrapper>
+  
         </div>
 
       </div>
