@@ -21,7 +21,6 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="">HOME PAGE</div> */}
 
         <div className="row text-center mx-auto mt-2">
 

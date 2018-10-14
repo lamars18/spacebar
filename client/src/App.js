@@ -12,8 +12,10 @@ import Home from './components/Home';
 import NewsFeed from './components/NewsFeed';
 import NotFound from './components/NotFound';
 import About from './components/About';
-// Context UI
+
+// Manage App State -- Context UI
 import { Provider } from './context';
+
 // stylesheets
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
