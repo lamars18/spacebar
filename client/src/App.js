@@ -50,7 +50,7 @@ class App extends Component {
             />
             <Header
               title={this.state.appName}
-              titleicon="fas fa-rocket app-color-3"
+              titleicon="fas fa-rocket app-color-1"
               message="Discover what's out there."
             ></Header>
 

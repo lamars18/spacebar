@@ -53,14 +53,14 @@ class Articles extends Component {
     return (
 
       <div className="card card-body mb-3">
-        <h5 className="text-left">{this.props.title} 
+        <h6 className="text-left">{this.props.title} 
           <i className="fas fa-caret-down ml-2" style={{ cursor: 'pointer' }}></i>
-          <i className="fas fa-times" style={{cursor: 'pointer', float: 'right', color: 'red'}}></i>
+          <i className="fas fa-times app-color-2" style={{cursor: 'pointer', float: 'right'}}></i>
           <a href="/contact/edit/1">
-            <i className="fas fa-pencil-alt" style={{cursor: 'pointer', float: 'right', color: 'black', marginRight: '1rem'}}></i>
+            <i className="fas fa-pencil-alt app-color-4" style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}></i>
           </a>
-        </h5>
-        <h6 className="text-left text-muted">Written by {this.props.author} on {this.formatDate(this.props.date)}</h6>
+        </h6>
+        <small className="text-left text-muted">Written by {this.props.author} on {this.formatDate(this.props.date)}</small>
       </div>
 
     )

@@ -29,7 +29,7 @@ const cardButtons = [
     "id": 4,
     "datavalue": "comment",
     "title": "Comment",
-    "icon": "far fa-comments fa-lg"
+    "icon": "far fa-comments"
   }
 ];
 

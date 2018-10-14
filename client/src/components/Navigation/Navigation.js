@@ -8,7 +8,7 @@ const Navigation = props => {
     return (
         <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 app-color-1">
             <div className="container">
-                <a href="/" className="navbar-brand app-color-2">
+                <a href="/" className="navbar-brand app-color-1">
                     {branding}
                 </a>
                 <div>

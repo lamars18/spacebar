@@ -19,12 +19,12 @@ export default () => {
 
           <h4>Features</h4>
           <ul id="feature-list" className="text-left fa-ul list-group list-group-flush">
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>User Authentication</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>Customizable Profiles</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>Latest News</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>Blogging</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>Chat</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check"></i>Responsive Design</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>User Authentication</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Customizable Profiles</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Latest News</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Blogging</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Chat</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Responsive Design</li>
           </ul>
 
           {/* <ul className="text-left">Contributors
