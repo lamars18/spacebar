@@ -6,36 +6,36 @@ const Navigation = props => {
     const { branding } = props;
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark py-0">
-        <div className="container">
-            <a href="/" className="navbar-brand">
-                {branding}
-            </a>
-            <div>
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            <i className="fas fa-home" /> Home
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/login" className="nav-link">
-                            <i className="fas fa-sign-in-alt" /> Login
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/register" className="nav-link">
-                            <i className="fas fa-user-plus" /> Sign-up
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/about" className="nav-link">
-                            <i className="fas fa-question" /> About
-                        </Link>
-                    </li>
-                </ul>
+        <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 app-color-1">
+            <div className="container">
+                <a href="/" className="navbar-brand app-color-2">
+                    {branding}
+                </a>
+                <div>
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link app-color-2">
+                                <i className="fas fa-home" /> Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/login" className="nav-link app-color-2">
+                                <i className="fas fa-sign-in-alt" /> Login
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/register" className="nav-link app-color-2">
+                                <i className="fas fa-user-plus" /> Sign-up
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/about" className="nav-link app-color-2">
+                                <i className="fas fa-question" /> About
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </nav>
     );
 };

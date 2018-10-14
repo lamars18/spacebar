@@ -1,10 +1,10 @@
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 20vmin;
 }
 
 .App-header {
@@ -29,4 +29,51 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+html,body {
+  color: #2F2F28;     /* match app-bg-color-2 */
+}
+
+.app-display-4 {
+  font-size: 2.0rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/*******************/
+/* App Color Theme */
+/*******************/
+/* https://www.canva.com/learn/100-color-combinations/ */
+/* 79. Beyond Black & White (turquoise #31A2AC, lipstick #AF1C1C, grayish while #F0EFF0, old wood #2F2F28) */
+.app-color-1 {
+  color:#31A2AC;
+}
+.app-bg-color-1 {
+  background-color:#31A2AC;
+}
+
+.app-color-2 {
+  color: #AF1C1C;
+}
+.app-bg-color-2 {
+  background-color: #AF1C1C;
+}
+
+.app-color-3 {
+  color: #F0EFF0;
+}
+.app-bg-color-3 {
+  background-color: #F0EFF0;
+}
+
+.app-color-4 {
+  color: #2F2F28;
+}
+.app-bg-color-4 {
+  background-color: #2F2F28;
+}
+
+a:hover {
+  color: rgb(143, 21, 21);
 }

@@ -22,17 +22,17 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="">HOME PAGE</div>
+        {/* <div className="">HOME PAGE</div> */}
 
-        <div className="row text-center mx-auto">
+        <div className="row text-center mx-auto mt-2">
 
           <div id="profile-section" className="col-md-2 container">
-            <h6>User Profile</h6>
+            <h6 className="app-display-4">User Profile</h6>
 
           </div>
 
           <div id="newsfeed-section" className="col-md-3 home">
-            <h6>Latest News</h6>
+            <h6 className="app-display-4">Latest News</h6>
 
             {/* <!-- 2 line heading card view --> */}
             <Wrapper>
@@ -82,7 +82,7 @@ class Home extends Component {
           </div>
 
           <div id="blog-section" className="col-md-3 container">
-            <h6>Posts</h6>
+            <h6 className="app-display-4">Posts</h6>
             <Wrapper>
               <Consumer>
                 { (value) => (    
@@ -107,7 +107,7 @@ class Home extends Component {
           </div>
 
           <div id="chat-section" className="col-md-2 container">
-            <h6>Trending/Chat</h6>
+            <h6 className="app-display-4">Trending/Chat</h6>
 
           </div>
         </div>

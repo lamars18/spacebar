@@ -20,9 +20,6 @@ import './App.css';
 
 class App extends Component {
 
-  //////////////////////////////////////////////
-  // handle communicating with express server
-  //////////////////////////////////////////////
   state = {
     // articles: ''
     appName: "SpaceBar",
@@ -30,6 +27,9 @@ class App extends Component {
     year: new Date().getFullYear()
   };
 
+  //////////////////////////////////////////////
+  // when component mounts
+  //////////////////////////////////////////////
   async componentDidMount() {
       // let res = await axios.get('/api/scrape');
   
@@ -50,7 +50,7 @@ class App extends Component {
             />
             <Header
               title={this.state.appName}
-              titleicon="fas fa-rocket"
+              titleicon="fas fa-rocket app-color-3"
               message="Discover what's out there."
             ></Header>
 
