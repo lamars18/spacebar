@@ -2,19 +2,25 @@
   min-height: 80px;
   padding-top: 40px;
 }
-
+*/
 #page-header {
-  height: 200px;
-  background: url('./image4.jpeg');
-  background-position: 0 -3995px;
-  background-attachment: fixed;
-  color: #fff;
-  border-bottom: 1px #eee solid;
-  padding-top: 50px;
-} */
+  /* height: 200px; */
 
+  /* background: url('./img/dark-sky.jpeg'); */
+  /* background-position: -200px -5000px;  */
+
+  /* background: url('./img/only-stars.jpeg'); */
+
+  background-attachment: fixed;
+  padding-top: 50px;
+  color: white;
+} 
+/* 
 .jumbotron {
   background-color: #0B3C5D;
   color: white;
-}
+} 
+  color: #fff; 
+  border-bottom: 1px #eee solid;
+*/
 

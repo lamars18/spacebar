@@ -50,14 +50,13 @@ class App extends Component {
             />
             <Header
               title={this.state.appName}
-              titleicon="fas fa-rocket app-color-1"
               message="Discover what's out there."
             ></Header>
 
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/api/articles' component={NewsFeed} />
               <Route exact path="/about" component={About} />
+              <Route path='/api/articles' component={NewsFeed} />
               <Route component={NotFound} />
             </Switch>
 
