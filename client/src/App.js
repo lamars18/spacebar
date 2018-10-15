@@ -12,7 +12,7 @@ import Footer from './components/layout/Footer';
 // pages
 import About from './components/pages/About';
 import Home from './components/pages/Home';
-import NewsFeed from './components/pages/NewsFeed';
+import Content from './components/pages/Content';
 import NotFound from './components/pages/NotFound';
 
 // Manage App State
@@ -35,16 +35,6 @@ class App extends Component {
   };
 
   /////////////////////////
-  // when component mounts
-  /////////////////////////
-  async componentDidMount() {
-      // let res = await axios.get('/api/scrape');
-  
-      // console.log(res.data);
-      // this.setState({ articles: res.data });
-  }
-
-  /////////////////////////
   // render
   /////////////////////////
   render() {
@@ -63,7 +53,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path="/about" component={About} />
-              <Route path='/api/articles' component={NewsFeed} />
+              <Route path='/api/articles' component={Content} />
               <Route component={NotFound} />
             </Switch>
 

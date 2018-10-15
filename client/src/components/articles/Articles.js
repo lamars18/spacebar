@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Article from './Article';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import Article from './Article';
 import { getArticles } from '../../actions/articleActions';
 
 class Articles extends Component {
@@ -13,11 +14,8 @@ class Articles extends Component {
     const { articles } = this.props;
     return (
       <React.Fragment>
-        <h1 className="display-4 mb-2">
-          <span className="text-danger">Article</span> List
-        </h1>
         {articles.map(article => (
-          <Article key={article.id} article={article} />
+          <Article key={article._id} article={article} />
         ))}
       </React.Fragment>
     );
@@ -35,5 +33,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getArticles }
+  {getArticles}
 )(Articles);
