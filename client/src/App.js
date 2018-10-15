@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //components
-import Navigation from './components/Navigation';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Navigation from './components/layout/Navigation';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
 // pages
 import About from './components/pages/About';

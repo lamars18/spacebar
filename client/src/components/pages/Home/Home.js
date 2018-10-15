@@ -1,13 +1,10 @@
 // import React from "react";
 import React, { Component } from 'react';
 // import { Consumer } from '../../context';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-import Wrapper from "../../Wrapper";
-import Articles from "../../Articles";
+import Wrapper from "../../layout/Wrapper";
+import Articles from "../../layout/Articles";
 import "./Home.css";
-// import articles from "./articlesTemp.json";
 
 class Home extends Component {
 
