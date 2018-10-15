@@ -3,9 +3,9 @@
 ///////////////////
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import axios from 'axios';
 //components
-import Jumbotron from './components/Jumbotron';
+import Navigation from './components/Navigation';
+import Header from './components/Header';
 import Footer from './components/Footer';
 // pages
 import Home from './components/Home';
@@ -17,15 +17,45 @@ import { Provider } from './context';
 // stylesheets
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+//chat
+import ChatScreen from './components/Chat/ChatScreen'
+import UsernameForm from './components/Chat/UsernameForm'
 
 class App extends Component {
-
+  constructor() {
+    super()
+    this.state = {
+      currentUsername: '',
+      currentScreen: 'WhatIsYourUsernameScreen',
   //////////////////////////////////////////////
   // handle communicating with express server
   //////////////////////////////////////////////
-  state = {
+  // state = {
     // articles: ''
-  };
+    appName: "SpaceBar",
+    orgName: "GT Project Team",
+    year: new Date().getFullYear()
+  }
+
+this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
+}
+
+onUsernameSubmitted(username) {
+fetch('http://localhost:3001/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ username }),
+})
+  .then(response => {
+    this.setState({
+      currentUsername: username,
+      currentScreen: 'ChatScreen',
+    })
+  })
+  .catch(error => console.error('error', error))
+}
 
   async componentDidMount() {
       // let res = await axios.get('/api/scrape');
@@ -38,15 +68,25 @@ class App extends Component {
   // app render
   /////////////////////////
   render() {
+    if (this.state.currentScreen === 'ChatScreen') {
+      return <ChatScreen onSubmit={this.onUsernameSubmitted} />
+    }
+    if (this.state.currentScreen === 'ChatScreen') {
+      return <ChatScreen currentUsername={this.state.currentUsername} />
+    }
     return (
+      
       <Provider>
         <Router>
           <div className="App fluid-container">
-            <Jumbotron
-              title="SpaceBar"
-              titleicon=""
-              message="Enter some content here..."
-            ></Jumbotron>
+            <Navigation 
+              branding={this.state.appName}
+            />
+            <Header
+              title={this.state.appName}
+              titleicon="fas fa-rocket"
+              message="Discover what's out there."
+            ></Header>
 
             <Switch>
               <Route exact path='/' component={Home} />
@@ -55,12 +95,22 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
 
-            <Footer></Footer>
+            <Footer
+              year={this.state.year}
+              orgName={this.state.orgName}
+              >
+            </Footer>
           </div>
         </Router>
       </Provider>
-    );
+    )
+   
+    
   }
 }
 
-export default App;
+  
+
+
+export default App
+  

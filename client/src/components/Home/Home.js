@@ -6,6 +6,12 @@ import Wrapper from "../Wrapper";
 import Card from "../Card";
 import "./Home.css";
 // import articles from "./articlesTemp.json";
+//for chat
+import ChatScreen from '../Chat/ChatScreen';
+import Blog from '../Blog/Blog'
+import UserProfile from '../Profile/Profile';
+import UsernameForm from '../Chat/UsernameForm'
+
 
 class Home extends Component {
 
@@ -50,11 +56,16 @@ class Home extends Component {
 
           <div id="blog-section" className="col-md-4 container">
             <h6>SECTION 2</h6>
+            <UserProfile />
+            <Blog />
           </div>
 
           <div id="chat-section" className="col-md-4 container">
             <h6>SECTION 3</h6>
-          </div>
+           
+            <ChatScreen />
+            <UsernameForm />
+            </div>
         </div>
       </React.Fragment>
     )
