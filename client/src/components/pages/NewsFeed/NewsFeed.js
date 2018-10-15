@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Wrapper from "../Wrapper";
-import ArticleItem from "../ArticleItem";
+// import Wrapper from "../Wrapper";
+// import ArticleItem from "../ArticleItem";
 import "./NewsFeed.css";
-import articles from "./articlesTemp.json";
+// import articles from "./articlesTemp.json";
 
 class NewsFeed extends Component {
 
@@ -12,14 +12,14 @@ class NewsFeed extends Component {
 
   // load the images from the json array
   state = {
-    articles: articles
+    // articles: articles
   };
   
   render() {
     return (
       <section className="news-feed">
         NEWSFEED PAGE
-        <Wrapper>
+        {/* <Wrapper>
           {this.state.articles.map(articleItem => (
             <ArticleItem
               id={articleItem.id}
@@ -29,7 +29,7 @@ class NewsFeed extends Component {
               url={articleItem.url}
             />
           ))}
-        </Wrapper>
+        </Wrapper> */}
       </section>
     )
   }

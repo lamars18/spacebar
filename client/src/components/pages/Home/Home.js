@@ -1,9 +1,11 @@
 // import React from "react";
 import React, { Component } from 'react';
-import { Consumer } from '../../context';
+// import { Consumer } from '../../context';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import Wrapper from "../Wrapper";
-import Articles from "../Articles";
+import Wrapper from "../../Wrapper";
+import Articles from "../../Articles";
 import "./Home.css";
 // import articles from "./articlesTemp.json";
 
@@ -34,7 +36,7 @@ class Home extends Component {
 
             {/* <!-- 2 line heading card view --> */}
             <Wrapper>
-              <Consumer>
+              {/* <Consumer> */}
                 { (value) => (    
                   <React.Fragment>
                     {value.articles.map(articleItem => (
@@ -51,7 +53,7 @@ class Home extends Component {
                     ))} 
                   </React.Fragment>
                 ) }
-              </Consumer>
+              {/* </Consumer> */}
             </Wrapper>
 
             {/* <!-- full card view --> */}

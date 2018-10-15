@@ -3,35 +3,40 @@
 ///////////////////
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 //components
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// pages
-import Home from './components/Home';
-import NewsFeed from './components/NewsFeed';
-import NotFound from './components/NotFound';
-import About from './components/About';
 
-// Manage App State -- Context UI
-import { Provider } from './context';
+// pages
+import About from './components/pages/About';
+import Home from './components/pages/Home';
+import NewsFeed from './components/pages/NewsFeed';
+import NotFound from './components/pages/NotFound';
+
+// Manage App State
+import { Provider } from 'react-redux';
+import store from './store';
 
 // stylesheets
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+//////////////////////////////////////////////
+// App component
+//////////////////////////////////////////////
 class App extends Component {
 
   state = {
-    // articles: ''
     appName: "SpaceBar",
     orgName: "GT Project Team",
     year: new Date().getFullYear()
   };
 
-  //////////////////////////////////////////////
+  /////////////////////////
   // when component mounts
-  //////////////////////////////////////////////
+  /////////////////////////
   async componentDidMount() {
       // let res = await axios.get('/api/scrape');
   
@@ -40,11 +45,11 @@ class App extends Component {
   }
 
   /////////////////////////
-  // app render
+  // render
   /////////////////////////
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <div className="App fluid-container">
             <Navigation 
