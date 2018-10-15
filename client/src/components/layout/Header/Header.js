@@ -1,0 +1,14 @@
+import React from "react";
+import "./Header.css";
+
+const Header = (props) => (
+  <header id="page-header" className="jumbotron text-center mb-0 p-3 app-bg-color-4">
+    <h1 className="display-3">
+      <i className="fas fa-rocket app-color-3"></i> {props.title}
+    </h1>
+    { props.message ? <div className="message">{props.message}</div> : null}
+  </header>
+);
+
+export default Header;
+
