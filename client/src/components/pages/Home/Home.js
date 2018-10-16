@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Articles from '../../articles/Articles';
+import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
 
 class Home extends Component {
@@ -26,7 +27,7 @@ class Home extends Component {
           {/* Chat */}
           <div id="chat-section" className="col-md-2 container">
             <h6 className="app-display-4">Trending/Chat</h6>
-
+            <ChatApp></ChatApp>
           </div>
         </div>
       </React.Fragment>
