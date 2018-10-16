@@ -3,6 +3,10 @@
   padding-top: 40px;
 }
 */
+h3.display-5 {
+  margin-top: 50px;
+}
+
 #page-header {
   /* height: 200px; */
 
@@ -10,11 +14,11 @@
   /* background-position: -200px -5000px;  */
 
   /* background: url('./img/only-stars.jpeg'); */
-
-  background-attachment: fixed;
-  padding-top: 50px;
-  color: white;
+  top: 50;
+  /* background-attachment: fixed; */
+  color: white; 
 } 
+
 /* 
 .jumbotron {
   background-color: #0B3C5D;
