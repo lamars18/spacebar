@@ -3,7 +3,8 @@
 /////////////////////////////////////////////////////////
 
 // use dotenv to read .env vars into Node but silence the Heroku log error for production as no .env will exist
-require('dotenv').config( { silent: process.env.NODE_ENV === 'production' } );
+require('dotenv').config( );
+// { silent: process.env.NODE_ENV === 'production' }
 
 // process.env.NODE_ENV is set by heroku with a default value of production
 if (process.env.NODE_ENV === 'production') {
