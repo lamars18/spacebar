@@ -145,6 +145,7 @@ module.exports = function(app) {
   // GET root route
   app.get("/", function(req, res) {
     console.log("route: root");
+    res.redirect("/login");
   });
 
   // GET scrape route to retrieve articles
