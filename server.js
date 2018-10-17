@@ -37,12 +37,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //////////////////////
-// Chat-Kit
+// CORS / Chat-Kit
 //////////////////////
 const cors = require('cors');
-const Chatkit = require('pusher-chatkit-server');
+// const Chatkit = require('pusher-chatkit-server');
 
 app.use(cors())
+
+// const chatkit = new Chatkit.default({
+//     instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
+//     key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=",
+//     url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
+//   });
 
 // serve static folders
 app.use(express.static(__dirname + '/public'));
@@ -143,3 +149,12 @@ if (process.env.NODE_ENV === 'production') {
 
 // listen for request
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// const CHAT_PORT = 3001
+// app.listen(CHAT_PORT, err => {
+//   if (err) {
+//     console.error(err)
+//   } else {
+//     console.log(`Chat running on port ${CHAT_PORT}`)
+//   }
+// })

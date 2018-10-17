@@ -1,13 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const Chatkit = require('pusher-chatkit-server')
+// const Chatkit = require('pusher-chatkit-server')
 
-const chatkit = new Chatkit.default({
-    instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
-    key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=",
-    url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
-  });
+// const chatkit = new Chatkit.default({
+//     instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
+//     key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=",
+//     url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
+//   });
 
 module.exports = function(router) {
 
