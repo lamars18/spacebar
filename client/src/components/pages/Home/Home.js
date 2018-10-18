@@ -17,7 +17,7 @@ class Home extends Component {
           {/* News Feed */}
           <div id="newsfeed-section" className="col-md-3 home">
             <h6 className="app-display-4">Latest News</h6>
-            <Articles></Articles>
+            <Articles />
           </div>
           {/* Blog */}
           <div id="blog-section" className="col-md-3 container">
