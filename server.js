@@ -4,7 +4,6 @@
 
 // use dotenv to read .env vars into Node but silence the Heroku log error for production as no .env will exist
 require('dotenv').config( );
-// { silent: process.env.NODE_ENV === 'production' }
 
 // process.env.NODE_ENV is set by heroku with a default value of production
 if (process.env.NODE_ENV === 'production') {
@@ -43,11 +42,10 @@ app.use(express.static(__dirname + '/public'));
 /////////////////////////
 // connect to Mongo DB
 /////////////////////////
-// If deployed, use the deployed database. Otherwise use the local thespacebar database
+// If deployed, use the deployed database. Otherwise use the local database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/thespacebar";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
+// Set mongoose to leverage built in JavaScript ES6 Promises and connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true)
@@ -65,11 +63,16 @@ app.use(session({
 //////////////////////
 // enable CORS
 //////////////////////
-app.use(function(req, res, next) { 
-  res.header("Access-Control-Allow-Origin", "*"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
-  next(); 
-});
+
+// CORS / Chat-Kit
+const cors = require('cors');
+app.use(cors())
+
+// app.use(function(req, res, next) { 
+//   res.header("Access-Control-Allow-Origin", "*"); 
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
+//   next(); 
+// });
 
 ////////////////////////////////
 // console log all routes
@@ -86,7 +89,7 @@ app.use('/', function (req, res, next) {
 ////////////////////////////////
 //auth required or redirect
 ////////////////////////////////
-//  app.use('/api/account', function(req, res, next) {
+//  app.use('/api', function(req, res, next) {
 //   if ( !req.session.user ) {
 //     res.redirect('/login?ref='+req.path);
 //   } else {
@@ -101,16 +104,12 @@ var routes = require("./controllers/app_controller.js");
 app.use(routes);
 
 //////////////////////
-// initial route
+// initial test route
 //////////////////////
-// app.get('/api/hello', (req, res) => {
-//     res.send({ express: 'Hello From Express, Jenni' });
+// app.get('/api/test', (req, res) => {
+//     res.send({ express: 'Hello From Express!!' });
 //   });
   
-// app.get('/api/art', (req, res) => {
-//     res.send({ express: 'My art route!' });
-//   });
-
 /////////////////////////////////////
 // handle production environment
 /////////////////////////////////////
@@ -136,3 +135,4 @@ if (process.env.NODE_ENV === 'production') {
 
 // listen for request
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
