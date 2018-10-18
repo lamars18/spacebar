@@ -9,13 +9,14 @@ import jwt_decode from 'jwt-decode';
 import store from './actions/store';
 
 //components
-import Navigation from './components/layout/Navigation';
-import Header from './components/layout/Header';
+// import Navigation from './components/layout/Navigation';
+// import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 
 // pages
+import Main from './components/pages/Main';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
 import Content from './components/pages/Content';
@@ -48,7 +49,7 @@ if (localStorage.jwtToken) {
 class App extends Component {
 
   state = {
-    appName: "SpaceBar",
+    // appName: "SpaceBar",
     orgName: "GT Project Team",
     year: new Date().getFullYear()
   };
@@ -61,16 +62,17 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App fluid-container">
-            <Navigation 
+            {/* <Navigation 
               branding={this.state.appName}
-            />
-            <Header
+            /> */}
+            {/* <Header
               title={this.state.appName}
               message="Discover what's out there."
-            ></Header>
+            ></Header> */}
 
             <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/' component={Main} />
+              <Route exact path='/home' component={Home} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
               <Route exact path="/about" component={About} />
