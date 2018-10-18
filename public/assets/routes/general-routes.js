@@ -145,10 +145,11 @@ module.exports = function(app) {
   // GET root route
   app.get("/", function(req, res) {
     console.log("route: root");
+    res.redirect("/login");
   });
 
   // GET scrape route to retrieve articles
-  app.get("/api/scrape", function(req, res) {
+  app.get("/api/articles/scrape", function(req, res) {
     console.log("route: in scrape articles");
     
     // calls function to scrape the Smashing Magazine site, which also contains a callback function to load the data to Mongo
@@ -157,7 +158,7 @@ module.exports = function(app) {
   });
   
   // GET clear all articles (and their associated comments) route
-  app.get("/clear", function(req, res) {
+  app.get("/api/articles/clear", function(req, res) {
     console.log("route: in clear all articles");
 
     // clear all data

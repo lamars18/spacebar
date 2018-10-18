@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////
 
 // use dotenv to read .env vars into Node but silence the Heroku log error for production as no .env will exist
-require('dotenv').config( { silent: process.env.NODE_ENV === 'production' } );
+require('dotenv').config();
 
 // process.env.NODE_ENV is set by heroku with a default value of production
 if (process.env.NODE_ENV === 'production') {
@@ -36,31 +36,16 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//////////////////////
-// CORS / Chat-Kit
-//////////////////////
-const cors = require('cors');
-// const Chatkit = require('pusher-chatkit-server');
-
-app.use(cors())
-
-// const chatkit = new Chatkit.default({
-//     instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
-//     key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=",
-//     url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
-//   });
-
 // serve static folders
 app.use(express.static(__dirname + '/public'));
 
 /////////////////////////
 // connect to Mongo DB
 /////////////////////////
-// If deployed, use the deployed database. Otherwise use the local thespacebar database
+// If deployed, use the deployed database. Otherwise use the local database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/thespacebar";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
+// Set mongoose to leverage built in JavaScript ES6 Promises and connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true)
@@ -78,11 +63,16 @@ app.use(session({
 //////////////////////
 // enable CORS
 //////////////////////
-app.use(function(req, res, next) { 
-  res.header("Access-Control-Allow-Origin", "*"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
-  next(); 
-});
+
+// CORS / Chat-Kit
+const cors = require('cors');
+app.use(cors())
+
+// app.use(function(req, res, next) { 
+//   res.header("Access-Control-Allow-Origin", "*"); 
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
+//   next(); 
+// });
 
 ////////////////////////////////
 // console log all routes
@@ -99,7 +89,7 @@ app.use('/', function (req, res, next) {
 ////////////////////////////////
 //auth required or redirect
 ////////////////////////////////
-//  app.use('/api/account', function(req, res, next) {
+//  app.use('/api', function(req, res, next) {
 //   if ( !req.session.user ) {
 //     res.redirect('/login?ref='+req.path);
 //   } else {
@@ -114,16 +104,12 @@ var routes = require("./controllers/app_controller.js");
 app.use(routes);
 
 //////////////////////
-// initial route
+// initial test route
 //////////////////////
-// app.get('/api/hello', (req, res) => {
-//     res.send({ express: 'Hello From Express, Jenni' });
+// app.get('/api/test', (req, res) => {
+//     res.send({ express: 'Hello From Express!!' });
 //   });
   
-// app.get('/api/art', (req, res) => {
-//     res.send({ express: 'My art route!' });
-//   });
-
 /////////////////////////////////////
 // handle production environment
 /////////////////////////////////////
@@ -150,11 +136,3 @@ if (process.env.NODE_ENV === 'production') {
 // listen for request
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// const CHAT_PORT = 3001
-// app.listen(CHAT_PORT, err => {
-//   if (err) {
-//     console.error(err)
-//   } else {
-//     console.log(`Chat running on port ${CHAT_PORT}`)
-//   }
-// })
