@@ -5,6 +5,8 @@ import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhosOnlineList from './WhosOnlineList'
 
+const PUSHER_URL = "http://localhost:3001" || process.env.PUSHER_URL;
+
 class ChatScreen extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +38,7 @@ class ChatScreen extends Component {
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
         // url: 'http://localhost:3001/authenticate',
-        url: '/authenticate',
+        url: PUSHER_URL + '/authenticate',
       }),
     })
 
