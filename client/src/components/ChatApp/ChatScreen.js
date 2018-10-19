@@ -5,7 +5,7 @@ import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhosOnlineList from './WhosOnlineList'
 
-const PUSHER_URL = "http://localhost:3001" || process.env.PUSHER_URL;
+const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
 
 class ChatScreen extends Component {
   constructor(props) {
