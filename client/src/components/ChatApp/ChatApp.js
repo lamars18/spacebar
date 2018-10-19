@@ -4,7 +4,7 @@ import ChatScreen from './ChatScreen'
 // import axios from 'axios';
 var Pusher = require('pusher');
 
-const PUSHER_URL = "http://localhost:3001" || process.env.PUSHER_URL;
+const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
 
 class ChatApp extends Component {
   constructor() {
