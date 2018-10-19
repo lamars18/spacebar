@@ -30,15 +30,18 @@
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
     <script>
   
+      // use dotenv to read .env vars into Node but silence the Heroku log error for production as no .env will exist
+      require('dotenv').config( );
+
       // Enable pusher logging - don't include this in production
       Pusher.logToConsole = true;
   
-      var pusher = new Pusher.forURL(process.env.PUSHER_URL);
+      // var pusher = new Pusher.forURL(process.env.PUSHER_URL);
 
-      // var pusher = new Pusher('6966b17ce803991af55e', {
-      //   cluster: 'us2',
-      //   forceTLS: true
-      // });
+      var pusher = new Pusher(PROD_PUSHER_KEY, {
+        cluster: PROD_PUSHER_CLUSTER,
+        forceTLS: true
+      });
   
       var channel = pusher.subscribe('my-channel');
       channel.bind('my-event', function(data) {
