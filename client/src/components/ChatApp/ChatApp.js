@@ -41,7 +41,10 @@ class ChatApp extends Component {
     //   }
     // };
 
-    fetch('http://localhost:3001/users', {
+    // below worked local
+    // fetch('http://localhost:3001/users', {
+    fetch('/users', {
+
     // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
     // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
     // fetch('/chat/users', {
