@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
 // import axios from 'axios';
+var Pusher = require('pusher');
 
 class ChatApp extends Component {
   constructor() {
@@ -11,6 +12,23 @@ class ChatApp extends Component {
       currentScreen: 'WhatIsYourUsernameScreen',
     }
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
+  }
+
+  // added this method for chatkit heroku
+  OnComponentDidMount() {
+      // if prod
+
+      var pusher = new Pusher({
+        appId: '625661',
+        key: '6966b17ce803991af55e',
+        secret: '238ccf508d590242c96e',
+        cluster: 'us2',
+        encrypted: true
+      });
+
+      pusher.trigger('my-channel', 'my-event', {
+        "message": "hello world"
+      });
   }
 
   onUsernameSubmitted(username) {
