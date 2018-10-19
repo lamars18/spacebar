@@ -38,8 +38,10 @@
   
       // var pusher = new Pusher.forURL(process.env.PUSHER_URL);
 
-      var pusher = new Pusher(PROD_PUSHER_KEY, {
-        cluster: PROD_PUSHER_CLUSTER,
+      // var pusher = new Pusher(PROD_PUSHER_KEY, {
+      //   cluster: PROD_PUSHER_CLUSTER,
+      var pusher = new Pusher('0994ad65480f56ef8e9c', {
+        cluster: 'us2',
         forceTLS: true
       });
   
