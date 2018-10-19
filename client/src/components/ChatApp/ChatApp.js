@@ -15,21 +15,21 @@ class ChatApp extends Component {
   }
 
   // added this method for chatkit heroku
-  OnComponentDidMount() {
-      // if prod
+  // OnComponentDidMount() {
+  //     // if prod
 
-      var pusher = new Pusher({
-        appId: '625661',
-        key: '6966b17ce803991af55e',
-        secret: '238ccf508d590242c96e',
-        cluster: 'us2',
-        encrypted: true
-      });
+  //     var pusher = new Pusher({
+  //       appId: '625661',
+  //       key: '6966b17ce803991af55e',
+  //       secret: '238ccf508d590242c96e',
+  //       cluster: 'us2',
+  //       encrypted: true
+  //     });
 
-      pusher.trigger('my-channel', 'my-event', {
-        "message": "hello world"
-      });
-  }
+  //     pusher.trigger('my-channel', 'my-event', {
+  //       "message": "hello world"
+  //     });
+  // }
 
   onUsernameSubmitted(username) {
     console.log(username);

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import "./Navigation.css"
 
-const MainNav = props => {
+const Navigation = props => {
     const { branding } = props;
 
     return (
@@ -44,12 +45,12 @@ const MainNav = props => {
     );
 };
 
-MainNav.defaultProps = {
-    branding: 'SpaceBar'
+Navigation.defaultProps = {
+    branding: 'My App'
 };
 
-MainNav.propTypes = {
+Navigation.propTypes = {
     branding: PropTypes.string.isRequired
 };
 
-export default MainNav;
+export default Navigation;
