@@ -4,6 +4,8 @@ import ChatScreen from './ChatScreen'
 // import axios from 'axios';
 var Pusher = require('pusher');
 
+const PUSHER_URL = "http://localhost:3001" || process.env.PUSHER_URL;
+
 class ChatApp extends Component {
   constructor() {
     super()
@@ -43,7 +45,7 @@ class ChatApp extends Component {
 
     // below worked local
     // fetch('http://localhost:3001/users', {
-    fetch('/users', {
+    fetch(PUSHER_URL + '/users', {
 
     // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
     // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
