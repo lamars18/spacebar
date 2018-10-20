@@ -1,12 +1,9 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+// const express = require('express')
+// const bodyParser = require('body-parser')
+// const cors = require('cors')
 const Chatkit = require('pusher-chatkit-server')
 
 const chatkit = new Chatkit.default({
-    // instanceLocator: process.env.REACT_APP_CHATKIT_INSTANCE_LOCATOR,
-    // key: process.env.REACT_APP_CHATKIT_KEY ,
-    // url: process.env.REACT_APP_CHATKIT_URL
     instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
     key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=" ,
     url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
@@ -14,7 +11,7 @@ const chatkit = new Chatkit.default({
 
 module.exports = function(router) {
 
-    router.post('chat/users', (req, res) => {
+    router.post('/chat/users', (req, res) => {
         console.log("chatkit body");
         console.log(req.body);
 
@@ -43,11 +40,3 @@ module.exports = function(router) {
 
 };
 
-// const PORT = 3001
-// app.listen(PORT, err => {
-//   if (err) {
-//     console.error(err)
-//   } else {
-//     console.log(`Running on port ${PORT}`)
-//   }
-// })
