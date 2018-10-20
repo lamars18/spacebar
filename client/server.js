@@ -2,7 +2,7 @@
 require('dotenv').config( );
 
 const express = require('express');
-const session = require('express-session');
+// const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const Chatkit = require('pusher-chatkit-server');
@@ -10,20 +10,32 @@ const Chatkit = require('pusher-chatkit-server');
 const app = express();
 
 const chatkit = new Chatkit.default({
-  instanceLocator: "v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449",
-  key: "e4ca655d-422d-4c06-852f-3ead9e2cd075:INafeTcxNJXMZ1VD7nkxQOLTmPnhfizwRZtcrhKjt0w=",
-  url: `https://us1.pusherplatform.io/services/chatkit_token_provider/v1/bf8def9e-a084-4d5d-b55c-018e22b58449/token`
+  instanceLocator: process.env.CHATKIT_INSTANCE_LOCATOR,
+  key: process.env.CHATKIT_KEY //,
+  // url: process.env.CHATKIT_URL
 })
 
-app.use(session({
-  secret: process.env.SECRET_KEY,     // put this in the heroku environment variables
-  saveUninitialized: true,
-  resave: true
-}));
+// app.use(session({
+//   secret: process.env.SECRET_KEY,     // put this in the heroku environment variables
+//   saveUninitialized: true,
+//   resave: true
+// }));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+//////////////////////
+// enable CORS
+//////////////////////
+
+// CORS / Chat-Kit
 app.use(cors())
+
+app.use(function(req, res, next) { 
+  res.header("Access-Control-Allow-Origin", "*"); 
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
+  next(); 
+});
 
 ////////////////////////////
 // Heroku Deployment
@@ -47,7 +59,7 @@ app.use(cors())
 
 
   pusher.trigger('my-channel', 'my-event', {
-    "message": "hello world jmc"
+    "message": "Hello from NODE jmc"
   });
 // }
 
@@ -78,7 +90,7 @@ app.post('/authenticate', (req, res) => {
   res.status(authData.status).send(authData.body)
 })
 
-const PORT = 3001
+const PORT = (process.env.PORT || 3001)
 app.listen(PORT, err => {
   if (err) {
     console.error(err)
