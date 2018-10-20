@@ -50,6 +50,12 @@ class Article extends Component {
     this.props.deleteArticle(id);
   };
 
+  handleBtnClick = () => {
+    // this.props.pinArticle(id);
+    // this.props.deleteArticle(id);
+    // this.props.commentArticle(id);
+  };
+
   // return in utc to convert the date from the offset provided to UTC
   // these dates have no timezone
   formatDate = (date) => moment.utc(date).format('MM/DD/YYYY');
@@ -101,7 +107,8 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-1 bg-white app-color-1 `}
+                      className={`card-btn mt-auto app-border-color-6 bg-white app-color-6 `}
+                      title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
                       role="button"
@@ -116,11 +123,11 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      data-value={cardBtn.datavalue}
+                      className={`card-btn app-border-color-6 bg-white app-color-6 ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}
-                      // onClick={this.props.handleBtnClick}
+                      onClick={this.props.handleBtnClick}
                     />
                 ))}
               </Wrapper>
