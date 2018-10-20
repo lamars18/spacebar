@@ -49,26 +49,26 @@ html,body {
 /* 79. Beyond Black & White (turquoise #31A2AC, lipstick #AF1C1C, grayish while #F0EFF0, old wood #2F2F28) */
 .app-color-1,
 a.app-color-1:hover {
-  color:#31A2AC;
+  color:#EEF1EF;
 }
 .app-bg-color-1 {
-  background-color:#31A2AC;
+  background-color:#EEF1EF;
 }
 .app-border-color-1 {
   border: 1px solid;
-  border-color:#31A2AC;
+  border-color:#EEF1EF;
 }
 
 .app-color-2,
 a.app-color-2:hover {
-  color: #AF1C1C;
+  color: #D72638;
 }
 .app-bg-color-2 {
-  background-color: #AF1C1C;
+  background-color: #D72638;
 }
 .app-border-color-2 {
   border: 1px solid;
-  border-color:#AF1C1C;
+  border-color:#D72638;
 }
 
 .app-color-3,
@@ -145,8 +145,8 @@ a:focus {
 
 .app-btn-primary {
   color: #fff;
-  background-color: #31A2AC;
-  border-color: 31A2AC;
+  background-color: #3F88C5;
+  border-color: #3F88C5;
 }
 
 p {
