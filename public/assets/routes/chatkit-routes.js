@@ -1,6 +1,3 @@
-// const express = require('express')
-// const bodyParser = require('body-parser')
-// const cors = require('cors')
 const Chatkit = require('pusher-chatkit-server')
 
 const chatkit = new Chatkit.default({
@@ -12,9 +9,6 @@ const chatkit = new Chatkit.default({
 module.exports = function(router) {
 
     router.post('/chat/users', (req, res) => {
-        console.log("chatkit body");
-        console.log(req.body);
-
         const { username } = req.body
         chatkit
         .createUser({
@@ -32,8 +26,6 @@ module.exports = function(router) {
     })
     
     router.post('/chat/authenticate', (req, res) => {
-        // const { grant_type} = req.body
-        // res.json(chatkit.authenticate({grant_type}, req.query.user_id))
         const authData = chatkit.authenticate({ userId: req.query.user_id })
         res.status(authData.status).send(authData.body)
     })
