@@ -1,12 +1,8 @@
-// const express = require('express');
-// const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateRegisterInput = require('../../../validation/register');
 const validateLoginInput = require('../../../validation/login');
-
-// const User = require('./User');
 
 // Requiring our models
 const db = require("../../../models");
@@ -58,6 +54,8 @@ module.exports = function(router) {
 
     router.post('/login', (req, res) => {
 
+        const payload = req.body;
+        
         const { errors, isValid } = validateLoginInput(req.body);
 
         if (!isValid) {

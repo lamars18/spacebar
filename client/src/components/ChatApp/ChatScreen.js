@@ -4,9 +4,7 @@ import MessageList from './MessageList'
 import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhosOnlineList from './WhosOnlineList'
-require('dotenv').config( );
-
-// const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
+// require('dotenv').config( );
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -38,9 +36,7 @@ class ChatScreen extends Component {
       instanceLocator: 'v1:us1:bf8def9e-a084-4d5d-b55c-018e22b58449',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
-        // url: 'http://localhost:3001/authenticate'
-        url: '/chat/authenticate',
-        // url: process.env.PUSHER_URL + '/authenticate',
+        url: '/chat/authenticate'
       }),
     })
 
