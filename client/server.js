@@ -28,8 +28,14 @@ app.use(cors())
 ////////////////////////////
 // Heroku Deployment
 ////////////////////////////
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   const Pusher = require('pusher');
+
+  console.log("*** PUSHER ***");
+  console.log("PROD_PUSHER_APP_ID: " + process.env.PROD_PUSHER_APP_ID);
+  console.log("PROD_PUSHER_KEY: " + process.env.PROD_PUSHER_KEY);
+  console.log("PROD_PUSHER_SECRET_KEY: " + process.env.PROD_PUSHER_SECRET_KEY);
+  console.log("PUSHER_URL: " + process.env.PUSHER_URL);
 
   const pusher = new Pusher({
     appId: process.env.PROD_PUSHER_APP_ID,
@@ -40,9 +46,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 
   pusher.trigger('my-channel', 'my-event', {
-    "message": "hello world"
+    "message": "hello world jmc"
   });
-}
+// }
 
 app.post('/users', (req, res) => {
 

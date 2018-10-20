@@ -3,6 +3,7 @@ import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
 // import axios from 'axios';
 // var Pusher = require('pusher');
+require('dotenv').config( );
 
 // const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
 
