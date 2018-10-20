@@ -46,6 +46,10 @@
       });
   
       var channel = pusher.subscribe('my-channel');
+      channel.bind('pusher:subscription_succeeded', function(members) {
+        alert('successfully subscribed!');
+      });
+
       channel.bind('my-event', function(data) {
         alert(JSON.stringify(data));
       });

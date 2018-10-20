@@ -45,6 +45,7 @@ app.use(cors())
     encrypted: true
   });
 
+
   pusher.trigger('my-channel', 'my-event', {
     "message": "hello world jmc"
   });
