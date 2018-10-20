@@ -65,6 +65,10 @@ app.use(function(req, res, next) {
 
 app.post('/users', (req, res) => {
 
+  pusher.trigger('my-channel', 'my-event', {
+    "message": "Hello from NODE jmc"
+  });
+  
   const { username } = req.body
   chatkit
     .createUser({
