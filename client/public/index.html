@@ -31,7 +31,7 @@
     <script>
   
       // use dotenv to read .env vars into Node but silence the Heroku log error for production as no .env will exist
-      require('dotenv').config( );
+      // require('dotenv').config( );
 
       // Enable pusher logging - don't include this in production
       Pusher.logToConsole = true;
@@ -41,7 +41,7 @@
       // var pusher = new Pusher(PROD_PUSHER_KEY, {
       //   cluster: PROD_PUSHER_CLUSTER,
       // var pusher = new Pusher('0994ad65480f56ef8e9c', {
-        var pusher = new Pusher(PROD_PUSHER_KEY, {
+        var pusher = new Pusher(process.env.REACT_APP_PROD_PUSHER_KEY, {
         cluster: 'us2' //,
         // forceTLS: true
       });
