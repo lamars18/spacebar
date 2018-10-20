@@ -36,7 +36,7 @@ class ChatApp extends Component {
 
   onUsernameSubmitted(username) {
     console.log(username);
-    console.log(process.env.PUSHER_URL);
+    // console.log(process.env.PUSHER_URL);
 
     // let axiosConfig = {
     //   headers: {
@@ -47,7 +47,7 @@ class ChatApp extends Component {
 
     // below worked local
     // fetch('http://localhost:3001/users', {
-    fetch(process.env.PUSHER_URL + '/users', {
+    fetch('/users', {
 
     // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
     // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
