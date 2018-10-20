@@ -25,8 +25,8 @@ class Avatar extends React.Component {
     if (!image) return null;
     
     return (
-     <div className="avatar" style={style}>
-           <img src={this.props.image} /> 
+     <div className="avatar app-bg-color-2" style={style}>
+           <img src={this.props.image} alt="User Profile" /> 
       </div>
     );
   }
@@ -45,7 +45,7 @@ class MainPanel extends React.Component {
                width={100}
                height={100}
             /> 
-          <hr />
+          <hr className="app-bg-color-2 w-100" />
          </div>
           
           <div>
@@ -72,7 +72,7 @@ class MainPanel extends React.Component {
 class UserProfile extends React.Component {
   render() {
     return (
-      <div id="user-profile">
+      <div id="user-profile" className="app-border-color-black">
         <MainPanel info={user.basicInfo} />
       </div>
     )
@@ -80,4 +80,3 @@ class UserProfile extends React.Component {
 }
 export default UserProfile;
 
-// React.render(<UserProfile />, document.getElementById('root'))

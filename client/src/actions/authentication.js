@@ -14,7 +14,6 @@ export const registerUser = (user, history) => dispatch => {
                 });
                 
             });
-            
 }
 
 export const loginUser = (user) => dispatch => {
@@ -41,9 +40,26 @@ export const setCurrentUser = decoded => {
     }
 }
 
-export const logoutUser = (history) => dispatch => {
-    localStorage.removeItem('jwtToken');
-    setAuthToken(false);
-    dispatch(setCurrentUser({}));
-    history.push('/login');
+// export const logoutUser = (history) => dispatch => {
+//     localStorage.removeItem('jwtToken');
+//     setAuthToken(false);
+//     dispatch(setCurrentUser({}));
+//     history.push('/login');
+// }
+
+export const logoutUser = (user) => dispatch => {
+
+    axios.post('/logout', user)
+        .then(res => {
+            localStorage.removeItem('jwtToken');
+            setAuthToken(false);
+            dispatch(setCurrentUser({}));
+            // history.push('/login');
+        })
+        .catch(err => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            });
+        });
 }

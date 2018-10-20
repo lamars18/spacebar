@@ -78,13 +78,13 @@ class Article extends Component {
             }
           ></i>
           <i 
-            className="fas fa-times app-color-2" 
+            className="fas fa-times app-color-danger" 
             style={{cursor: 'pointer', float: 'right'}}
             onClick={this.onDeleteClick.bind(this, _id)}
           ></i>
           <Link to={`api/articles/${_id}`}>
             <i 
-              className="fas fa-pencil-alt app-color-4" 
+              className="fas fa-pencil-alt app-color-primary" 
               style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}
             ></i>
           </Link>
@@ -107,7 +107,7 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-6 bg-white app-color-6 `}
+                      className={`card-btn mt-auto app-border-color-primary bg-white app-color-primary `}
                       title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -123,7 +123,7 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      className={`card-btn app-border-color-6 bg-white app-color-6 ${cardBtn.datavalue}`}
+                      className={`card-btn app-border-color-primary bg-white app-color-primary ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}

@@ -1,6 +1,17 @@
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .App {
   text-align: center;
 }
+
 
 /* 
 .App-logo {
@@ -33,7 +44,9 @@
 } */
 
 html,body {
-  color: #2F2F28;     /* match app-bg-color-4 */
+  /* color: #2F2F28;      */
+  /* match app-bg-color-4 */
+  background-color: app-color-1;
 }
 
 .app-display-4 {
@@ -47,6 +60,83 @@ html,body {
 /*******************/
 /* https://www.canva.com/learn/100-color-combinations/ */
 /* 79. Beyond Black & White (turquoise #31A2AC, lipstick #AF1C1C, grayish while #F0EFF0, old wood #2F2F28) */
+
+/* black */
+.app-color-black,
+a.app-color-black:hover {
+  color:#000;
+}
+.app-bg-color-darkgray {
+  background-color:#000;
+}
+.app-border-color-black {
+  border: 1px solid;
+  border-color:#000;
+}
+
+/*********/
+/* white */
+/*********/
+.app-color-white,
+a.app-color-white:hover {
+  color:#fff;
+}
+.app-bg-color-white {
+  background-color:#fff;
+}
+.app-border-color-white {
+  border: 1px solid;
+  border-color:#fff;
+}
+
+/**********************/
+/* danger color (red) */
+/**********************/
+.app-color-danger,
+a.app-color-danger:hover {
+  color: #D72638;
+}
+.app-bg-color-danger {
+  background-color: #D72638;
+}
+.app-border-color-danger {
+  border: 1px solid;
+  border-color:#D72638;
+}
+
+/*************************/
+/* success color (green) */
+/*************************/
+.app-color-success,
+a.app-color-success:hover {
+  color: #ADC698;
+}
+.app-bg-color-success {
+  background-color: #ADC698;
+}
+.app-border-color-danger {
+  border: 1px solid;
+  border-color:#ADC698;
+}
+
+/******************/
+/* primary color */
+/******************/
+.app-color-primary,
+a.app-color-primary:hover {
+  color: #3F88C5;
+}
+.app-bg-color-primary {
+  background-color: #3F88C5;
+}
+.app-border-color-primary {
+  border: 1px solid;
+  border-color:#3F88C5;
+}
+
+/****************/
+/* accent color */
+/****************/
 .app-color-1,
 a.app-color-1:hover {
   color:#EEF1EF;
@@ -59,57 +149,42 @@ a.app-color-1:hover {
   border-color:#EEF1EF;
 }
 
+/****************/
+/* accent color */
+/****************/
 .app-color-2,
 a.app-color-2:hover {
-  color: #D72638;
+  color: #F5853F;
 }
 .app-bg-color-2 {
-  background-color: #D72638;
+  background-color: #F5853F;
 }
 .app-border-color-2 {
   border: 1px solid;
-  border-color:#D72638;
+  border-color:#F5853F;
 }
 
-.app-color-3,
-a.app-color-3:hover {
-  color: #F0EFF0;
+/****************/
+/* dark gray    */
+/****************/
+.app-color-darkgray,
+a.app-color-darkgray:hover {
+  color: #2C303B;    
 }
-.app-bg-color-3 {
-  background-color: #F0EFF0;
+.app-bg-color-darkgray {
+  background-color: #2C303B;
 }
-.app-border-color-3 {
+.app-border-color-darkgray {
   border: 1px solid;
-  border-color:#F0EFF0;
+  border-color:#2C303B;
 }
 
-.app-color-4,
-a.app-color-4:hover {
-  color: #2F2F28;
-}
-.app-bg-color-4 {
-  background-color: #2F2F28;
-}
-.app-border-color-4 {
-  border: 1px solid;
-  border-color:#2F2F28;
-}
+/****************/
 
-.app-color-5,
-a.app-color-5:hover {
-  color: #0DAB76;   /* #6B9080 or #397367 or #0DAB76*/
-}
-.app-bg-color-5 {
-  background-color: #0DAB76;
-}
-.app-border-color-5 {
-  border: 1px solid;
-  border-color:#0DAB76;
-}
-
+/*
 .app-color-6,
 a.app-color-6:hover {
-  color: #4392F1;   /* #4392F1 or ? */
+  color: #4392F1;    #4392F1 or ? 
 }
 .app-bg-color-6 {
   background-color: #4392F1;
@@ -118,13 +193,20 @@ a.app-color-6:hover {
   border: 1px solid;
   border-color:#4392F1;
 }
+*/
+
+.app-btn-primary {
+  color: #fff;
+  background-color: #3F88C5;
+  border-color: #3F88C5;
+}
 
 a:hover {
   filter: brightness(80%);
 }
 
 button, a {
-  filter: opacity(.8);
+  filter: opacity(.9);
 }
 /* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
 /* a > i,button > i {
@@ -138,15 +220,10 @@ button:hover,
 a:hover {
   filter: opacity(1.0);
 }
+
 button:focus,
 a:focus {
   outline: none;
-}
-
-.app-btn-primary {
-  color: #fff;
-  background-color: #3F88C5;
-  border-color: #3F88C5;
 }
 
 p {

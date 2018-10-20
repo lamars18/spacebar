@@ -7,7 +7,7 @@ const Navigation = props => {
     const { branding } = props;
 
     return (
-        <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 px-5 app-color-1">
+        <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-darkgray py-0 px-5 app-color-1">
             {/* <div className="container"> */}
                 <a href="/" className="navbar-brand app-color-1">
                     {branding}
@@ -31,6 +31,13 @@ const Navigation = props => {
                                 </div>
                             </Link>
                         </li>
+                        {/* <li className="nav-item">
+                            <Link to="/logout" className="nav-link app-color-1">
+                                <div className="btn app-btn-primary">
+                                    <i className="fas fa-sign-out-alt" /> Logout
+                                </div>
+                            </Link>
+                        </li>                         */}
                         <li className="nav-item">
                             <Link to="/register" className="nav-link app-color-1">
                                 <div className="btn app-btn-primary">

@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
-// import axios from 'axios';
-// var Pusher = require('pusher');
-// require('dotenv').config( );
-
-// const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
 
 class ChatApp extends Component {
   constructor() {
@@ -36,21 +31,7 @@ class ChatApp extends Component {
 
   onUsernameSubmitted(username) {
     console.log(username);
-    // console.log(process.env.PUSHER_URL);
 
-    // let axiosConfig = {
-    //   headers: {
-    //       'Content-Type': 'application/json;charset=UTF-8',
-    //       "Access-Control-Allow-Origin": "*",
-    //   }
-    // };
-
-    // below worked local
-    // fetch('http://localhost:3001/users', {
-    // fetch('/users', {
-
-    // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
-    // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
     fetch('/chat/users', {
       method: 'POST',
       headers: {
@@ -66,20 +47,6 @@ class ChatApp extends Component {
       })
       .catch(error => console.error('error', error))
 
-    // fetch('http://localhost:3001/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ username }),
-    // })
-    //   .then(response => {
-    //     this.setState({
-    //       currentUsername: username,
-    //       currentScreen: 'ChatScreen',
-    //     })
-    //   })
-    //   .catch(error => console.error('error', error))
   }
 
   render() {

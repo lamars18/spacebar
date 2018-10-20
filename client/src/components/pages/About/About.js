@@ -19,20 +19,14 @@ export default () => {
 
           <h4>Features</h4>
           <ul id="feature-list" className="text-left fa-ul list-group list-group-flush">
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>User Authentication</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Customizable Profiles</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Latest News</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Blogging</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Chat</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-5"></i>Responsive Design</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>User Authentication</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Customizable Profiles</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Latest News</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Blogging</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Chat</li>
+            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Responsive Design</li>
           </ul>
 
-          {/* <ul className="text-left">Contributors
-            <li>Jenni - Express, Routing, Mongoose, MongoDB, React Routes/Context UI</li>
-            <li>Randy - Front End Design</li>
-            <li>Mathieu - Backend/User Authentication, Quality Control</li>
-            <li>Shetia - Backend/Frontend, Blog, Presentation</li>
-          </ul> */}
         </div>
         <div className="col"></div>
       </div>

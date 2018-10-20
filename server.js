@@ -23,7 +23,7 @@ const express = require('express');
 const session = require('express-session');
 const path = require("path");
 const bodyParser = require("body-parser");
-// const Chatkit = require('pusher-chatkit-server')
+const dbConnection = require("./models");
 
 ///////////////////////
 // configure Express
@@ -54,11 +54,15 @@ mongoose.set('useCreateIndex', true)
 /////////////////////
 // Expess Session
 /////////////////////
-// console.log("secret: " +  process.env.SECRET_KEY);
+
+const MongoStore = require('connect-mongo')(session)
 app.use(session({
     secret: process.env.SECRET_KEY,     // put this in the heroku environment variables
-    saveUninitialized: true,
-    resave: true
+    // saveUninitialized: true,
+    // resave: true
+    // store: new MongoStore({ mongooseConnection: dbConnection }),
+    resave: false,
+    saveUninitialized: false
   }));
 
 //////////////////////
@@ -90,6 +94,11 @@ app.use('/', function (req, res, next) {
 ////////////////////////////////
 //auth required or redirect
 ////////////////////////////////
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  return next();
+});
+
 //  app.use('/api', function(req, res, next) {
 //   if ( !req.session.user ) {
 //     res.redirect('/login?ref='+req.path);
