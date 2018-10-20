@@ -1,13 +1,22 @@
 #page-header {
   /* height: 200px; */
 
-  /* background: url('./img/dark-sky.jpeg'); */
+  /* background: url('./img/night-sky-2.jpeg'); */
   /* background-position: -200px -5000px;  */
 
   /* background: url('./img/only-stars.jpeg'); */
   /* top: 50; */
   /* background-attachment: fixed; */
+ 
   color: white; 
+
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../images/night-sky-2.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../images/night-sky-2.jpeg');
+  background-size: cover;
+  /* background-position: center; */
+  background-position: -200px -5000px; 
+  /* height: 100vh; */
+  background-attachment: fixed;
 } 
 
 

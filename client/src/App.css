@@ -1,3 +1,21 @@
+html,body {
+  background-color: app-color-1;
+}
+
+body {
+  /* background: url('./images/night-sky-2.jpeg');  */
+  /* background-position: -200px -5000px;  */
+/* 
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/night-sky-2.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/night-sky-2.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed; */
+
+}
+
+
 .site {
   display: flex;
   min-height: 100vh;
@@ -12,43 +30,6 @@
   text-align: center;
 }
 
-
-/* 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-html,body {
-  /* color: #2F2F28;      */
-  /* match app-bg-color-4 */
-  background-color: app-color-1;
-}
-
 .app-display-4 {
   font-size: 2.0rem;
   font-weight: 300;
@@ -58,8 +39,6 @@ html,body {
 /*******************/
 /* App Color Theme */
 /*******************/
-/* https://www.canva.com/learn/100-color-combinations/ */
-/* 79. Beyond Black & White (turquoise #31A2AC, lipstick #AF1C1C, grayish while #F0EFF0, old wood #2F2F28) */
 
 /* black */
 .app-color-black,
@@ -180,20 +159,6 @@ a.app-color-darkgray:hover {
 }
 
 /****************/
-
-/*
-.app-color-6,
-a.app-color-6:hover {
-  color: #4392F1;    #4392F1 or ? 
-}
-.app-bg-color-6 {
-  background-color: #4392F1;
-}
-.app-border-color-6 {
-  border: 1px solid;
-  border-color:#4392F1;
-}
-*/
 
 .app-btn-primary {
   color: #fff;

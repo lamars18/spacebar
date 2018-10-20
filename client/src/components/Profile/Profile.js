@@ -25,7 +25,7 @@ class Avatar extends React.Component {
     if (!image) return null;
     
     return (
-     <div className="avatar app-bg-color-2" style={style}>
+     <div className="avatar" style={style}>
            <img src={this.props.image} alt="User Profile" /> 
       </div>
     );
