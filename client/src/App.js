@@ -50,7 +50,9 @@ class App extends Component {
   state = {
     appName: "SpaceBar",
     orgName: "GT Project Team",
-    year: new Date().getFullYear()
+    year: new Date().getFullYear(),
+    // TODO set the login state to the user and the nav bar will reflect the appropriate action
+    isLoggedIn: false
   };
 
   /////////////////////////
@@ -63,6 +65,7 @@ class App extends Component {
           <div className="App fluid-container site">
             <Navigation 
               branding={this.state.appName}
+              showLoginInfo={!this.state.isLoggedIn}
             />
             <Header
               title={this.state.appName}
@@ -73,6 +76,7 @@ class App extends Component {
               <Switch className="site-content">
                 <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={Login} />
+                <Route exact path='/logout' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path="/about" component={About} />
                 <Route path='/api/articles' component={Content} />

@@ -1,23 +1,15 @@
+/******************/
+/* Overall site   */
+/******************/
 html,body {
   background-color: app-bg-color-black;
 }
 
 body {
-  /* background: url('./images/night-sky-2.jpeg');  */
-  /* background-position: -200px -5000px;  */
-
-  /* background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/only-stars.jpeg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/only-stars.jpeg');
-  background-size: contain;
-  background-position: center;
-  height: 100vh;
-  background-attachment: fixed; */
-
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Poppins', sans-serif;
   /* font-family: 'Ubuntu', sans-serif; */
 }
-
 
 .site {
   display: flex;
@@ -37,6 +29,70 @@ body {
   font-size: 2.0rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+/***************************/
+/* grid layout for content */
+/***************************/
+body {
+  /* margin: 40px; */
+}
+
+#home-page .wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [col1-start] 100px  [col2-start] 100px  [col3-start] 100px [col3-end];
+  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+  background-color: #fff;
+  color: #444; 
+  }
+
+#home-page .box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  /* font-size: 150%; */
+}
+
+#home-page .a {
+  grid-column: col1-start / col3-start;
+  grid-row: row1-start ;
+}
+#home-page .b {
+  grid-column: col3-start ;
+  grid-row: row1-start / row2-end;
+}
+#home-page .c {
+  grid-column: col1-start;
+  grid-row: row2-start ;
+}
+#home-page .d {
+  grid-column: col2-start ;
+  grid-row: row2-start ;
+}
+      
+/******************/
+/* Not Found Page */
+/******************/
+#not-found-page {
+  font-family: 'Poppins', sans-serif; 
+}
+
+#not-found-page p {
+  font-family: 'Raleway', sans-serif; 
+}
+
+/******************/
+/* Home page      */
+/******************/
+#home-page .vl {
+  border-left: 1px solid lightgrey;
+  height: 70vh;
+  position: absolute;
+  left: 25%;
+  margin-left: -3px;
+  top: 20%;
 }
 
 /*******************/
@@ -88,17 +144,18 @@ a.app-color-danger:hover {
 
 /*************************/
 /* success color (green) */
+/* ADC698                */
 /*************************/
 .app-color-success,
 a.app-color-success:hover {
-  color: #ADC698;
+  color: #0DAB76;
 }
 .app-bg-color-success {
-  background-color: #ADC698;
+  background-color: #0DAB76;
 }
 .app-border-color-success {
   border: 1px solid;
-  border-color:#ADC698;
+  border-color:#0DAB76;
 }
 
 /******************/
@@ -173,8 +230,10 @@ a:hover {
   filter: brightness(80%);
 }
 
-button, a {
-  filter: opacity(.7);
+button, a,
+#main-nav .vl 
+{
+  filter: opacity(.8);
 }
 /* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
 /* a > i,button > i {

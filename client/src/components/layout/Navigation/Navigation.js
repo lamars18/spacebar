@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "./Navigation.css"
 
 const Navigation = props => {
-    const { branding } = props;
+    const { branding, showLoginInfo } = props;
 
     return (
         <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-black py-2 px-5 app-color-1">
@@ -15,37 +15,49 @@ const Navigation = props => {
                 </a>
                 <div className="ml-auto">
                     <ul className="navbar-nav mr-auto">
+
                         <li className="nav-item">
                             <Link to="/" className="nav-link app-color-white">
                                 <i className="fas fa-home" /> Home
                             </Link>
                         </li>
-                        <li className="nav-item ml-4">
+                        <li className="nav-item ml-2">
                             <Link to="/about" className="nav-link app-color-white">
                                 <i className="fas fa-question" /> About
                             </Link>
                         </li>
-                        <li className="nav-item ml-4">
-                            <Link to="/login" className="nav-link app-color-white">
-                                {/* <div className="btn app-btn-primary"> */}
-                                    <i className="fas fa-sign-in-alt" /> Login
-                                {/* </div> */}
-                            </Link>
-                        </li>
-                        {/* <li className="nav-item ml-4">
-                            <Link to="/logout" className="nav-link app-color-white">
-                                <div className="btn app-btn-primary">
-                                    <i className="fas fa-sign-out-alt" /> Logout
-                                </div>
-                            </Link>
-                        </li>                         */}
-                        <li className="nav-item ml-4">
+
+                        {/* vertical separator */}
+                        <div className="vl ml-2 mr-2 app-color-white"></div>
+
+                {showLoginInfo ? (
+                    <React.Fragment>
+                        <li className="nav-item">
                             <Link to="/register" className="nav-link app-color-white">
                                 {/* <div className="btn app-btn-primary"> */}
                                     <i className="fas fa-user-plus" /> Sign-up
                                 {/* </div> */}
                             </Link>
                         </li>
+                        <li className="nav-item ml-2">
+                            <Link to="/login" className="nav-link app-color-white">
+                                {/* <div className="btn app-btn-primary"> */}
+                                    <i className="fas fa-sign-in-alt" /> Login
+                                {/* </div> */}
+                            </Link>
+                        </li>
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        <li className="nav-item ml-2">
+                            <Link to="/logout" className="nav-link app-color-white">
+                                {/* <div className="btn app-btn-primary"> */}
+                                    <i className="fas fa-sign-out-alt" /> Logout
+                                {/* </div> */}
+                            </Link>
+                        </li>
+                    </React.Fragment>                        
+                )}
                     </ul>
                 </div>
             {/* </div> */}
@@ -54,11 +66,13 @@ const Navigation = props => {
 };
 
 Navigation.defaultProps = {
-    branding: 'My App'
+    branding: 'My App',
+    showLoginInfo: true
 };
 
 Navigation.propTypes = {
-    branding: PropTypes.string.isRequired
+    branding: PropTypes.string.isRequired,
+    showLoginInfo: PropTypes.bool.isRequired
 };
 
 export default Navigation;

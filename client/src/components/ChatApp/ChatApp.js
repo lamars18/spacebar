@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
+// import { connect } from 'react-redux';
 
 class ChatApp extends Component {
   constructor() {
@@ -10,27 +11,11 @@ class ChatApp extends Component {
       currentScreen: 'WhatIsYourUsernameScreen',
     }
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
+    // this.onIsValidChatUser = this.onIsValidChatUser.bind(this)
   }
 
-  // added this method for chatkit heroku
-  // OnComponentDidMount() {
-  //     // if prod
-
-  //     var pusher = new Pusher({
-  //       appId: '625661',
-  //       key: '6966b17ce803991af55e',
-  //       secret: '238ccf508d590242c96e',
-  //       cluster: 'us2',
-  //       encrypted: true
-  //     });
-
-  //     pusher.trigger('my-channel', 'my-event', {
-  //       "message": "hello world"
-  //     });
-  // }
-
   onUsernameSubmitted(username) {
-    console.log(username);
+    console.log("OnUserNameSubmitted: " + username);
 
     fetch('/chat/users', {
       method: 'POST',
@@ -46,7 +31,25 @@ class ChatApp extends Component {
         })
       })
       .catch(error => console.error('error', error))
+  }
 
+  onIsValidChatUser(username) {
+    console.log("onIsValidChatUser: " + username);
+
+    fetch('/chat/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username }),
+    })
+      .then(response => {
+        this.setState({
+          currentUsername: username,
+          currentScreen: 'ChatScreen',
+        })
+      })
+      .catch(error => console.error('error', error))
   }
 
   render() {
@@ -56,7 +59,24 @@ class ChatApp extends Component {
     if (this.state.currentScreen === 'ChatScreen') {
       return <ChatScreen currentUsername={this.state.currentUsername} />
     }
+
+    ///////////////////////////////////////////////////////////////////////
+    // if isValidChatUser then go to ChatScreen, else prompt for UserName
+    ///////////////////////////////////////////////////////////////////////
+    // if (this.onIsValidChatUser(this.props.loggedInUser)) {
+    //   return <ChatScreen currentUsername={this.props.currentUsername} />
+    // } else {
+    //   return <UsernameForm onSubmit={this.onUsernameSubmitted} />
+    // }
+
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+//     loggedInUser: state.loggedInUser
+//   };
+// }
+
 export default ChatApp
+// export default connect(mapStateToProps,{}, null, )(ChatApp);
