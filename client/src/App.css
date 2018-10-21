@@ -1,18 +1,21 @@
 html,body {
-  background-color: app-color-1;
+  background-color: app-bg-color-black;
 }
 
 body {
   /* background: url('./images/night-sky-2.jpeg');  */
   /* background-position: -200px -5000px;  */
-/* 
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/night-sky-2.jpeg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/night-sky-2.jpeg');
-  background-size: cover;
+
+  /* background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/only-stars.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/only-stars.jpeg');
+  background-size: contain;
   background-position: center;
   height: 100vh;
   background-attachment: fixed; */
 
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
 }
 
 
@@ -45,7 +48,7 @@ body {
 a.app-color-black:hover {
   color:#000;
 }
-.app-bg-color-darkgray {
+.app-bg-color-black {
   background-color:#000;
 }
 .app-border-color-black {
@@ -93,7 +96,7 @@ a.app-color-success:hover {
 .app-bg-color-success {
   background-color: #ADC698;
 }
-.app-border-color-danger {
+.app-border-color-success {
   border: 1px solid;
   border-color:#ADC698;
 }
@@ -121,7 +124,7 @@ a.app-color-1:hover {
   color:#EEF1EF;
 }
 .app-bg-color-1 {
-  background-color:#EEF1EF;
+  background-color:rgba(238,241,239,.9);
 }
 .app-border-color-1 {
   border: 1px solid;
@@ -171,7 +174,7 @@ a:hover {
 }
 
 button, a {
-  filter: opacity(.9);
+  filter: opacity(.7);
 }
 /* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
 /* a > i,button > i {

@@ -9,7 +9,7 @@ export default () => {
         <div className="col-12">
           <h1 className="display-4 mt-4">About SpaceBar</h1>
           <p className="lead">The Social Media Site for Techies</p>
-          <p>SpaceBar is a valuable networking tool for coders to connect, exchange ideas, and stay current on technology trends.  Other coder "networks" allow sharing of coding issues but do not promote networking to identify potential collaborators on projects, meetups, speaking engagement, etc.</p>
+          <p>SpaceBar is a networking tool for technologists to connect, exchange ideas, and stay current on technology trends.  Other coder "networks" allow sharing of coding issues but do not promote networking to identify potential collaborators on projects, meetups, speaking engagement, etc.</p>
         </div>
         <div className="col"></div>
       </div>

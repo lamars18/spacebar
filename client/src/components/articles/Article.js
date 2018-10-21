@@ -57,7 +57,6 @@ class Article extends Component {
   };
 
   // return in utc to convert the date from the offset provided to UTC
-  // these dates have no timezone
   formatDate = (date) => moment.utc(date).format('MM/DD/YYYY');
 
   render() {

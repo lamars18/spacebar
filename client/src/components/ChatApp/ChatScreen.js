@@ -115,7 +115,7 @@ class ChatScreen extends Component {
     return (
       <div style={styles.container}>
       <header style={styles.header}>
-        <h2>MESSENGER</h2>
+        {/* <h2>Presence</h2> */}
       </header>
       <div style={styles.chatContainer}>
         <aside style={styles.whosOnlineListContainer}>
@@ -130,13 +130,13 @@ class ChatScreen extends Component {
             style={styles.chatList}
           />
           
-           <section style={styles.TypingIndicatorContainer}>
-          <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
-          <SendMessageForm
-            onSubmit={this.sendMessage}
-            onChange={this.sendTypingEvent}
-          />
-           </section>
+          <section style={styles.TypingIndicatorContainer}>
+            <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
+            <SendMessageForm
+              onSubmit={this.sendMessage}
+              onChange={this.sendTypingEvent}
+            />
+          </section>
         </section>
       </div>
     </div>
