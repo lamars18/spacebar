@@ -21,12 +21,12 @@ class Home extends Component {
             <Articles />
           </div>
           {/* Blog */}
-          <div id="blog-section" className="col-md-3 container">
+          {/* <div id="blog-section" className="col-md-3 container">
             <h6 className="app-display-4">Posts</h6>
 
-          </div>
+          </div> */}
           {/* Chat */}
-          <div id="chat-section" className="col-md-2 container">
+          <div id="chat-section" className="col-md-6 container">
             <h6 className="app-display-4">Trending/Chat</h6>
             <ChatApp></ChatApp>
           </div>
