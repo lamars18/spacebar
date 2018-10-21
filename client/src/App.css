@@ -2,7 +2,8 @@
 /* Overall site   */
 /******************/
 html,body {
-  background-color: app-bg-color-black;
+  background-color: white;
+  color: black;
 }
 
 body {
@@ -34,23 +35,19 @@ body {
 /***************************/
 /* grid layout for content */
 /***************************/
-body {
-  /* margin: 40px; */
+
+#home-page.css-grid-wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: [col1-start] auto  [col2-start] auto  [col3-start] auto [col3-end];
+  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
 }
 
-#home-page .wrapper {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: [col1-start] 100px  [col2-start] 100px  [col3-start] 100px [col3-end];
-  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
-  background-color: #fff;
-  color: #444; 
-  }
-
 #home-page .box {
-  background-color: #444;
-  color: #fff;
+  background-color: white;
+  /* color: #000; */
   border-radius: 5px;
+  margin: 0 !important;
   padding: 20px;
   /* font-size: 150%; */
 }
@@ -87,12 +84,13 @@ body {
 /* Home page      */
 /******************/
 #home-page .vl {
-  border-left: 1px solid lightgrey;
-  height: 70vh;
-  position: absolute;
-  left: 25%;
-  margin-left: -3px;
-  top: 20%;
+  border-right: 1px solid lightgrey;
+  /* height: 70vh; */
+  height: 70%;
+  /* position: absolute; */
+  /* left: 25%; */
+  /* margin-left: -3px; */
+  /* top: 20%; */
 }
 
 /*******************/
@@ -114,17 +112,18 @@ a.app-color-black:hover {
 
 /*********/
 /* white */
+/* snow  */
 /*********/
 .app-color-white,
 a.app-color-white:hover {
-  color:#fff;
+  color:#f9f9f9;
 }
 .app-bg-color-white {
-  background-color:#fff;
+  background-color:#f9f9f9;
 }
 .app-border-color-white {
   border: 1px solid;
-  border-color:#fff;
+  border-color:#f9f9f9;
 }
 
 /**********************/
@@ -132,7 +131,7 @@ a.app-color-white:hover {
 /**********************/
 .app-color-danger,
 a.app-color-danger:hover {
-  color: #D72638;
+  color: #D72638; 
 }
 .app-bg-color-danger {
   background-color: #D72638;
@@ -161,20 +160,21 @@ a.app-color-success:hover {
 /******************/
 /* primary color */
 /******************/
-.app-color-primary,
-a.app-color-primary:hover {
+.app-color-2,
+a.app-color-2:hover {
   color: #3F88C5;
 }
-.app-bg-color-primary {
+.app-bg-color-2 {
   background-color: #3F88C5;
 }
-.app-border-color-primary {
+.app-border-color-2 {
   border: 1px solid;
-  border-color:#3F88C5;
+  border-color: #3F88C5;
 }
 
 /****************/
 /* accent color */
+/* vl           */
 /****************/
 .app-color-1,
 a.app-color-1:hover {
@@ -190,17 +190,18 @@ a.app-color-1:hover {
 
 /****************/
 /* accent color */
+/* sea blue     */
 /****************/
 .app-color-2,
 a.app-color-2:hover {
-  color: #F5853F;
+  color: #05668D;
 }
 .app-bg-color-2 {
-  background-color: #F5853F;
+  background-color: #05668D;
 }
 .app-border-color-2 {
   border: 1px solid;
-  border-color:#F5853F;
+  border-color:#05668D;
 }
 
 /****************/
@@ -208,26 +209,30 @@ a.app-color-2:hover {
 /****************/
 .app-color-darkgray,
 a.app-color-darkgray:hover {
-  color: #2C303B;    
+  color: #595757;    
 }
 .app-bg-color-darkgray {
-  background-color: #2C303B;
+  background-color: #595757;
 }
 .app-border-color-darkgray {
   border: 1px solid;
-  border-color:#2C303B;
+  border-color:#595757;
 }
 
 /****************/
 
 .app-btn-primary {
   color: #fff;
-  background-color: #3F88C5;
-  border-color: #3F88C5;
+  background-color: #05668D;
+  border-color: #05668D;
 }
 
 a:hover {
   filter: brightness(80%);
+}
+
+button.btn.app-btn-primary {
+  padding: 10px;
 }
 
 button, a,

@@ -45,7 +45,7 @@ class MainPanel extends React.Component {
                width={100}
                height={100}
             /> 
-          <hr className="app-bg-color-2 w-100" />
+          <hr className="app-bg-color-white w-100" />
         </div>
           
         <div>

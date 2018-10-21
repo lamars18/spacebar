@@ -9,30 +9,29 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="home-page" className="row text-center mt-4 wrapper">
+        <div id="home-page" className="mt-4 css-grid-wrapper mx-5">
 
           {/* Profile */}
-          <div id="profile-section" className="col-md-2 container my-4 box a">
+          <div id="profile-section" className="box a">
             {/* <h6 className="app-display-4">User Profile</h6> */}
             <UserProfile />
+            {/* <div className="vl"></div> */}
           </div>
 
-          <div className="vl"></div>
-
           {/* News Feed */}
-          <div id="newsfeed-section" className="col-md-3 home box b">
+          <div id="newsfeed-section" className="box b">
             <h6 className="app-display-4">Headlines</h6>
             <Articles />
           </div>
 
           {/* Blog */}
-          <div id="blog-section" className="col-md-3 container box c">
+          <div id="blog-section" className="box d">
             <h6 className="app-display-4">Posts</h6>
 
           </div>
 
           {/* Chat */}
-          <div id="chat-section" className="col-md-2 container box d">
+          <div id="chat-section" className="box c">
             <h6 className="app-display-4">Chat</h6>
             <ChatApp></ChatApp>
           </div>

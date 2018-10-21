@@ -7,10 +7,10 @@ const Navigation = props => {
     const { branding, showLoginInfo } = props;
 
     return (
-        <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-black py-2 px-5 app-color-1">
+        <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-black app-color-white px-5" >
             {/* <div className="container"> */}
-                <a href="/" className="navbar-brand app-color-white">
-                    <i className="fas fa-rocket app-color-1 mr-2"></i>
+                <a href="/" className="navbar-brand m-0 px-4 py-2 app-color-white">
+                    <i className="fas fa-rocket fa-lg mr-2"></i>
                     {branding}
                 </a>
                 <div className="ml-auto">

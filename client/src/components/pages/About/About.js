@@ -19,12 +19,12 @@ export default () => {
 
           <h4>Features</h4>
           <ul id="feature-list" className="text-left fa-ul list-group list-group-flush">
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>User Authentication</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Customizable Profiles</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Latest News</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Blogging</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Chat</li>
-            <li className="list-group-item"><i className="fa-li fa fa-check app-color-success"></i>Responsive Design</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success "></i>User Authentication</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success"></i>Customizable Profiles</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success"></i>Latest News</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success"></i>Blogging</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success"></i>Chat</li>
+            <li className="list-group-item app-bg-color-white"><i className="fa-li fa fa-check app-color-success"></i>Responsive Design</li>
           </ul>
 
         </div>

@@ -72,7 +72,7 @@ class App extends Component {
               message="Discover what's out there."
             ></Header>
 
-            <div className="site-content">
+            <div className="site-content app-bg-color-white">
               <Switch className="site-content">
                 <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={Login} />

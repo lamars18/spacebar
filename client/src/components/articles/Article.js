@@ -83,7 +83,7 @@ class Article extends Component {
           ></i>
           <Link to={`api/articles/${_id}`}>
             <i 
-              className="fas fa-pencil-alt app-color-primary" 
+              className="fas fa-pencil-alt app-color-2" 
               style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}
             ></i>
           </Link>
@@ -106,7 +106,7 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-primary bg-white app-color-primary `}
+                      className={`card-btn mt-auto app-border-color-2 bg-white app-color-2 `}
                       title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -122,7 +122,7 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      className={`card-btn app-border-color-primary bg-white app-color-primary ${cardBtn.datavalue}`}
+                      className={`card-btn app-border-color-2 bg-white app-color-2 ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}
