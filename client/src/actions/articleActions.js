@@ -30,9 +30,11 @@ import {
       );
 
       if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        console.log("reducer get one article");
+        console.log(res.data[0]);
         dispatch({
           type: GET_ARTICLE,
-          payload: res.data
+          payload: res.data[0]
         });
       }
     } catch (e) {

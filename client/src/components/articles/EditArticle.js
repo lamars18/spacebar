@@ -177,12 +177,12 @@ class EditArticle extends Component {
 }
 
 EditArticle.propTypes = {
-  // article: PropTypes.object.isRequired,
+  article: PropTypes.object.isRequired,
   getArticle: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  article: state.article.article[0]
+  article: state.article.article
 });
 
 export default connect(
