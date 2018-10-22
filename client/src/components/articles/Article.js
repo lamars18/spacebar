@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteArticle } from '../../actions/articleActions';
@@ -16,13 +16,13 @@ const cardButtons = [
     "title": "Read",
     "icon": "fas fa-book-open"
   },
-  {
-    "id": 2,
-    "type": "button",
-    "datavalue": "save",
-    "title": "Save",
-    "icon": "fas fa-thumbtack"
-  },
+  // {
+  //   "id": 2,
+  //   "type": "button",
+  //   "datavalue": "save",
+  //   "title": "Save",
+  //   "icon": "fas fa-thumbtack"
+  // },
   // {
   //   "id": 3,
   //   "type": "button",
@@ -67,6 +67,8 @@ class Article extends Component {
       <div className="card card-body mb-3">
 
         <h6 className="text-left">{title} 
+
+        {/* toggle the article detail */}
           <i 
             className="fas fa-caret-down ml-2" 
             style={{ cursor: 'pointer' }}
@@ -76,17 +78,21 @@ class Article extends Component {
               })
             }
           ></i>
+
+          {/* delete the article from the mongo store */}
           <i 
             className="fas fa-times app-color-danger" 
             style={{cursor: 'pointer', float: 'right'}}
             onClick={this.onDeleteClick.bind(this, _id)}
           ></i>
-          {/* <Link to={`api/articles/${_id}`}>
+
+          {/* link to edit the article */}
+          <Link to={`api/articles/edit/${_id}`}>
             <i 
-              className="fa fa-search app-color-primary" 
+              className="fa fa-pencil-alt app-color-primary" 
               style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}
             ></i>
-          </Link> */}
+          </Link>
         </h6>
 
         <small className="text-left text-muted">By {author}, {this.formatDate(date)}</small>

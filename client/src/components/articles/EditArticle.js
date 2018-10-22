@@ -91,7 +91,7 @@ class EditArticle extends Component {
       title: '',
       author: '',
       summary: '',
-      date: '',
+      date: '0001-01-01T00:00:00',
       url: '',
       comments: [],
       errors: {}
@@ -107,20 +107,23 @@ class EditArticle extends Component {
 
   render() {
     const { _id, title, author, summary, date, url, errors } = this.state;
+    console.log(_id);
+    console.log(date);
 
     return (
       <div className="card mb-3 edit-page mx-5 mb-4 mt-0">
         <div className="card-header display-4">Edit Article</div>
         <div className="card-body">
           <form onSubmit={this.onSubmit}>
-          <TextInputGroup
+          {/* type='hidden' */}
+          {/* <TextInputGroup
               label="_Id"
               name="_id"
               placeholder="Enter _Id"
               value={_id}
               onChange={this.onChange}
               error={errors._id}
-            />
+            /> */}
             <TextInputGroup
               label="Title"
               name="title"
@@ -146,15 +149,14 @@ class EditArticle extends Component {
               onChange={this.onChange}
               error={errors.summary}
             />
-            <TextInputGroup
+            {/* <TextInputGroup
               label="Date"
               name="date"
               placeholder="Enter Date"
               value={this.formatDate(date)}
-              // {date}
               onChange={this.onChange}
               error={errors.date}
-            />
+            /> */}
             <TextInputGroup
               label="Url"
               name="url"
