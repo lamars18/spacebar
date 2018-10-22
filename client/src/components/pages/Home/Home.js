@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Articles from '../../articles/Articles';
-import Wrapper from '../../layout/Wrapper';
+// import Wrapper from '../../layout/Wrapper';
 import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
 import UserProfile from '../../Profile/Profile';
