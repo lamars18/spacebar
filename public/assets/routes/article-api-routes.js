@@ -78,6 +78,7 @@ module.exports = function(app) {
     // get all articles and associated comments
     db.Article.
       find({}).
+      sort({date: 'desc'}).
       populate('comments'). 
       exec(function (err, dbResult) {
         if (err) return handleError(err);
