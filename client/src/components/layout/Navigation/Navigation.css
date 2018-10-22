@@ -1,8 +1,16 @@
 #main-nav {
     width: 100%;
+    font-size: 1.75rem;
+    background-color: black;
+    color: rgb(110, 168, 226);
+    border: solid, 1px;
+    /* position:fixed;     */
 }
 
-#main-nav .vl {
-    border-left: 1px solid;
+#logout {
+    margin-left: 1000px;
 }
 
+#about {
+    margin-left: 800px
+}
