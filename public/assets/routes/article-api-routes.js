@@ -14,27 +14,36 @@ let routeCalled = 0;
 module.exports = function(app) {
 
   // console.log("route called: " + app.router.getCurrentPathname());
-  console.log("route call count: " + routeCalled);
+  // console.log("route call count: " + routeCalled);
 
-  ///////////////////////////////////////////////////////////////////////////
-  // ARTICLE GET route - get all articles (comments as objects)
-  ///////////////////////////////////////////////////////////////////////////
-  app.get("/api/articles", function(req, res) {
+  /////////////////////////////////////////////////////////////////////////////
+  // ARTICLE PUT route - update 1 article 
+  /////////////////////////////////////////////////////////////////////////////
+  app.put("/api/articles/:id", function(req, res) {
 
-    console.log("route: all articles");
-    // console.log(JSON.stringify(req.body));
+    console.log("route: put for update article");
 
-    // get all articles and associated comments
-    db.Article.
-      find({}).
-      populate('comments'). 
-      exec(function (err, dbResult) {
-        if (err) return handleError(err);
-        console.log(dbResult);
-     
-        res.send(dbResult);
-      });
-
+    // we're updating an existing document, hence the req.params.todoId.
+    // Find the existing resource by ID
+    db.Article.findByIdAndUpdate(
+      // the id of the item to find
+      req.params.id,
+      
+      // the change to be made. Mongoose will smartly combine your existing 
+      // document with this change, which allows for partial updates too
+      req.body,
+      
+      // an option that asks mongoose to return the updated version 
+      // of the document instead of the pre-updated one.
+      {new: true},
+      
+      // the callback function
+      (err, item) => {
+      // Handle any possible database errors
+          if (err) return res.status(500).send(err);
+          return res.send(item);
+      }
+    )
   });
 
   /////////////////////////////////////////////////////////////////////////////
@@ -56,6 +65,28 @@ module.exports = function(app) {
         res.send(dbResult);
       });
     
+  });
+
+  ///////////////////////////////////////////////////////////////////////////
+  // ARTICLE GET route - get all articles (comments as objects)
+  ///////////////////////////////////////////////////////////////////////////
+  app.get("/api/articles", function(req, res) {
+
+    console.log("route: all articles");
+    // console.log(JSON.stringify(req.body));
+
+    // get all articles and associated comments
+    db.Article.
+      find({}).
+      sort({date: 'desc'}).
+      populate('comments'). 
+      exec(function (err, dbResult) {
+        if (err) return handleError(err);
+        console.log(dbResult);
+     
+        res.send(dbResult);
+      });
+
   });
 
   ///////////////////////////////////////////////////////////////////////////

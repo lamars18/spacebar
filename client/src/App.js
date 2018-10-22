@@ -15,10 +15,13 @@ import Footer from './components/layout/Footer';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 
+//other tests
+import EditArticle from './components/articles/EditArticle';
+
 // pages
 import About from './components/pages/About';
 import Home from './components/pages/Home';
-import Content from './components/pages/Content';
+// import Content from './components/pages/Content';
 import NotFound from './components/pages/NotFound';
 
 // Manage App State
@@ -80,9 +83,10 @@ class App extends Component {
                 <Route exact path='/logout' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path="/about" component={About} />
-                <Route path='/api/articles' component={Content} />
+                <Route exact path="/api/articles/edit/:id" component={EditArticle} />
+                <Route exact path='/api/articles' component={Home} />
                 {/* <Route path={`/api/articles/${_id}`} component={Content} /> */}
-                <Route path='/api/articles/scrape' component={Content} />
+                {/* <Route path='/api/articles/scrape' component={Content} /> */}
                 <Route component={NotFound} />
               </Switch>
             </div>

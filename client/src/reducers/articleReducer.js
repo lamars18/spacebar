@@ -28,10 +28,11 @@ export default function(state = initialState, action) {
             };
         case DELETE_ARTICLE:
             console.log('made it to DELETE_ARTICLE');
+            console.log(state);
             return {
                 ...state,
                 articles: state.articles.filter(
-                    article => article.id !== action.payload
+                    article => article._id !== action.payload
                 )
             };
         case ADD_ARTICLE:
@@ -45,7 +46,7 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 articles: state.articles.map(
-                    article => article.id === action.payload.id
+                    article => article._id === action.payload._id
                         ? (article = action.payload)
                         : article
                 )

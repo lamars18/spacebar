@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
 import Articles from '../../articles/Articles';
-import Wrapper from '../../layout/Wrapper';
+// import Wrapper from '../../layout/Wrapper';
 import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
 import UserProfile from '../../Profile/Profile';
@@ -59,7 +60,11 @@ class Home extends Component {
 
           {/* News Feed */}
           <div id="newsfeed-section" className="box b">
-            <h6 className="app-display-4">Headlines</h6>
+            <h6 className="app-display-4">Headlines
+              {/* <a key='scrape' href="/api/articles/scrape"  className="btn app-btn-primary app-btn-bg-white app-btn-border-primary float-right" title="Scrape Headlines" role="button">
+                <i className="fa fa-search" /> 
+              </a> */}
+            </h6>
             <Articles />
           </div>
 
