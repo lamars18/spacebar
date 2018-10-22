@@ -8,21 +8,36 @@ import {
   import axios from 'axios';
   
   export const getArticles = () => async dispatch => {
-    const res = await axios.get('/api/articles');
-    dispatch({
-      type: GET_ARTICLES,
-      payload: res.data
-    });
+    try {
+      const res = await axios.get('/api/articles');
+
+      // if is not empty, dispatch
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: GET_ARTICLES,
+          payload: res.data
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   
   export const getArticle = id => async dispatch => {
-    const res = await axios.get(
-      `/api/articles/${id}`
-    );
-    dispatch({
-      type: GET_ARTICLE,
-      payload: res.data
-    });
+    try {
+      const res = await axios.get(
+        `/api/articles/${id}`
+      );
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: GET_ARTICLE,
+          payload: res.data
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   
   export const deleteArticle = id => async dispatch => {
@@ -41,24 +56,38 @@ import {
   };
   
   export const addArticle = article => async dispatch => {
-    const res = await axios.post(
-      '/api/articles',
-      article
-    );
-    dispatch({
-      type: ADD_ARTICLE,
-      payload: res.data
-    });
+    try {
+      const res = await axios.post(
+        '/api/articles',
+        article
+      );
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: ADD_ARTICLE,
+          payload: res.data
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   
   export const updateArticle = article => async dispatch => {
-    const res = await axios.put(
-      `/api/articles/${article.id}`,
-      article
-    );
-    dispatch({
-      type: UPDATE_ARTICLE,
-      payload: res.data
-    });
+    try {
+      const res = await axios.put(
+        `/api/articles/${article.id}`,
+        article
+      );
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: UPDATE_ARTICLE,
+          payload: res.data
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   

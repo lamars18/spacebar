@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteArticle } from '../../actions/articleActions';
@@ -23,13 +23,13 @@ const cardButtons = [
     "title": "Save",
     "icon": "fas fa-thumbtack"
   },
-  {
-    "id": 3,
-    "type": "button",
-    "datavalue": "delete",
-    "title": "Delete",
-    "icon": "far fa-trash-alt"
-  },
+  // {
+  //   "id": 3,
+  //   "type": "button",
+  //   "datavalue": "delete",
+  //   "title": "Delete",
+  //   "icon": "far fa-trash-alt"
+  // },
   {
     "id": 4,
     "type": "button",
@@ -57,7 +57,6 @@ class Article extends Component {
   };
 
   // return in utc to convert the date from the offset provided to UTC
-  // these dates have no timezone
   formatDate = (date) => moment.utc(date).format('MM/DD/YYYY');
 
   render() {
@@ -78,22 +77,22 @@ class Article extends Component {
             }
           ></i>
           <i 
-            className="fas fa-times app-color-2" 
+            className="fas fa-times app-color-danger" 
             style={{cursor: 'pointer', float: 'right'}}
             onClick={this.onDeleteClick.bind(this, _id)}
           ></i>
-          <Link to={`api/articles/${_id}`}>
+          {/* <Link to={`api/articles/${_id}`}>
             <i 
-              className="fas fa-pencil-alt app-color-4" 
+              className="fa fa-search app-color-primary" 
               style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}
             ></i>
-          </Link>
+          </Link> */}
         </h6>
 
         <small className="text-left text-muted">By {author}, {this.formatDate(date)}</small>
 
         {showArticleInfo ? (
-          <div> 
+          <div id="article-detail-section"> 
             <hr></hr>
             <p className="card-text">{summary}</p>
             <div className="mt-auto">
@@ -107,7 +106,7 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-6 bg-white app-color-6 `}
+                      className={`card-btn mt-auto app-btn-primary app-btn-bg-white app-btn-border-primary`}
                       title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -123,7 +122,7 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      className={`card-btn app-border-color-6 bg-white app-color-6 ${cardBtn.datavalue}`}
+                      className={`card-btn ml-2 app-btn-primary app-btn-bg-white app-btn-border-primary ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}

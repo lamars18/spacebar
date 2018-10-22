@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
-// import axios from 'axios';
-// var Pusher = require('pusher');
-// require('dotenv').config( );
-
-// const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
+// import { connect } from 'react-redux';
 
 class ChatApp extends Component {
   constructor() {
@@ -15,42 +11,12 @@ class ChatApp extends Component {
       currentScreen: 'WhatIsYourUsernameScreen',
     }
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
+    // this.onIsValidChatUser = this.onIsValidChatUser.bind(this)
   }
 
-  // added this method for chatkit heroku
-  // OnComponentDidMount() {
-  //     // if prod
-
-  //     var pusher = new Pusher({
-  //       appId: '625661',
-  //       key: '6966b17ce803991af55e',
-  //       secret: '238ccf508d590242c96e',
-  //       cluster: 'us2',
-  //       encrypted: true
-  //     });
-
-  //     pusher.trigger('my-channel', 'my-event', {
-  //       "message": "hello world"
-  //     });
-  // }
-
   onUsernameSubmitted(username) {
-    console.log(username);
-    // console.log(process.env.PUSHER_URL);
+    console.log("OnUserNameSubmitted: " + username);
 
-    // let axiosConfig = {
-    //   headers: {
-    //       'Content-Type': 'application/json;charset=UTF-8',
-    //       "Access-Control-Allow-Origin": "*",
-    //   }
-    // };
-
-    // below worked local
-    // fetch('http://localhost:3001/users', {
-    // fetch('/users', {
-
-    // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
-    // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
     fetch('/chat/users', {
       method: 'POST',
       headers: {
@@ -65,21 +31,25 @@ class ChatApp extends Component {
         })
       })
       .catch(error => console.error('error', error))
+  }
 
-    // fetch('http://localhost:3001/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ username }),
-    // })
-    //   .then(response => {
-    //     this.setState({
-    //       currentUsername: username,
-    //       currentScreen: 'ChatScreen',
-    //     })
-    //   })
-    //   .catch(error => console.error('error', error))
+  onIsValidChatUser(username) {
+    console.log("onIsValidChatUser: " + username);
+
+    fetch('/chat/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username }),
+    })
+      .then(response => {
+        this.setState({
+          currentUsername: username,
+          currentScreen: 'ChatScreen',
+        })
+      })
+      .catch(error => console.error('error', error))
   }
 
   render() {
@@ -89,7 +59,24 @@ class ChatApp extends Component {
     if (this.state.currentScreen === 'ChatScreen') {
       return <ChatScreen currentUsername={this.state.currentUsername} />
     }
+
+    ///////////////////////////////////////////////////////////////////////
+    // if isValidChatUser then go to ChatScreen, else prompt for UserName
+    ///////////////////////////////////////////////////////////////////////
+    // if (this.onIsValidChatUser(this.props.loggedInUser)) {
+    //   return <ChatScreen currentUsername={this.props.currentUsername} />
+    // } else {
+    //   return <UsernameForm onSubmit={this.onUsernameSubmitted} />
+    // }
+
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+//     loggedInUser: state.loggedInUser
+//   };
+// }
+
 export default ChatApp
+// export default connect(mapStateToProps,{}, null, )(ChatApp);

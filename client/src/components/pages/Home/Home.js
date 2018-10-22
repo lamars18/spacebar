@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Articles from '../../articles/Articles';
+import Wrapper from '../../layout/Wrapper';
 import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
 import UserProfile from '../../Profile/Profile';
@@ -9,25 +10,70 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="row text-center mx-auto mt-2">
+        <div id="home-page" className="mt-4 css-grid-wrapper app-bg-color-3 mx-5 mb-4">
+
           {/* Profile */}
-          <div id="profile-section" className="col-md-2 container">
-            <h6 className="app-display-4">User Profile</h6>
-            <UserProfile />
+          <div id="profile-section" className="box a">
+            {/* <h6 className="app-display-4">User Profile</h6> */}
+            <div className="d-flex justify-content-around">
+              <UserProfile />
+
+<div className="ml-4">
+  <ul className="list-group">
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+  </ul>
+</div> 
+
+            </div>
+            {/* <div className="vl"></div> */}
           </div>
+
           {/* News Feed */}
-          <div id="newsfeed-section" className="col-md-3 home">
-            <h6 className="app-display-4">Latest News</h6>
+          <div id="newsfeed-section" className="box b">
+            <h6 className="app-display-4">Headlines</h6>
             <Articles />
           </div>
-          {/* Blog */}
-          <div id="blog-section" className="col-md-3 container">
-            <h6 className="app-display-4">Posts</h6>
 
+          {/* Blog */}
+          <div id="blog-section" className="box d">
+            <h6 className="app-display-4">Blog</h6>
+            {/* <div> */}
+              <iframe title="blog-area" src ="https://coderdevelopers.blogspot.com/" width="100%" height="100%"> </iframe>
+            {/* </div> */}
           </div>
+
           {/* Chat */}
-          <div id="chat-section" className="col-md-2 container">
-            <h6 className="app-display-4">Trending/Chat</h6>
+          <div id="chat-section" className="box c">
+            <h6 className="app-display-4">Chat</h6>
             <ChatApp></ChatApp>
           </div>
         </div>

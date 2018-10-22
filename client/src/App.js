@@ -3,9 +3,9 @@
 ///////////////////
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import setAuthToken from './actions/setAuthToken';
-import { setCurrentUser, logoutUser } from './actions/authentication';
-import jwt_decode from 'jwt-decode';
+// import setAuthToken from './actions/setAuthToken';
+// import { setCurrentUser, logoutUser } from './actions/authentication';
+// import jwt_decode from 'jwt-decode';
 import store from './actions/store';
 
 //components
@@ -29,17 +29,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
-if (localStorage.jwtToken) {
-  setAuthToken(localStorage.jwtToken);
-  const decoded = jwt_decode(localStorage.jwtToken);
-  store.dispatch(setCurrentUser(decoded));
+// if (localStorage.jwtToken) {
+//   setAuthToken(localStorage.jwtToken);
+//   const decoded = jwt_decode(localStorage.jwtToken);
+//   store.dispatch(setCurrentUser(decoded));
 
-  const currentTime = Date.now() / 1000;
-  if (decoded.exp < currentTime) {
-    store.dispatch(logoutUser());
-    window.location.href = '/login'
-  }
-}
+//   const currentTime = Date.now() / 1000;
+//   if (decoded.exp < currentTime) {
+//     store.dispatch(logoutUser());
+//     window.location.href = '/login'
+//   }
+// }
 
 
 //////////////////////////////////////////////
@@ -50,7 +50,9 @@ class App extends Component {
   state = {
     appName: "SpaceBar",
     orgName: "GT Project Team",
-    year: new Date().getFullYear()
+    year: new Date().getFullYear(),
+    // TODO set the login state to the user and the nav bar will reflect the appropriate action
+    isLoggedIn: false
   };
 
   /////////////////////////
@@ -60,23 +62,30 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App fluid-container">
+          <div className="App fluid-container site">
             <Navigation 
               branding={this.state.appName}
+              showLoginInfo={!this.state.isLoggedIn}
             />
             <Header
               title={this.state.appName}
               message="Discover what's out there."
             ></Header>
 
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path="/about" component={About} />
-              <Route path='/api/articles' component={Content} />
-              <Route component={NotFound} />
-            </Switch>
+{/* app-bg-color-white or bg_white*/}
+            <div className="site-content app-bg-color-white">
+              <Switch className="site-content">
+                <Route exact path='/' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/logout' component={Login} />
+                <Route exact path='/register' component={Register} />
+                <Route exact path="/about" component={About} />
+                <Route path='/api/articles' component={Content} />
+                {/* <Route path={`/api/articles/${_id}`} component={Content} /> */}
+                <Route path='/api/articles/scrape' component={Content} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
 
             <Footer
               year={this.state.year}

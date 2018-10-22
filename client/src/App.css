@@ -1,39 +1,29 @@
+/******************/
+/* Overall site   */
+/******************/
+html,body {
+  background-color: white;
+  color: black;
+}
+
+body {
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .App {
   text-align: center;
-}
-
-/* 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-html,body {
-  color: #2F2F28;     /* match app-bg-color-4 */
 }
 
 .app-display-4 {
@@ -42,13 +32,150 @@ html,body {
   line-height: 1.2;
 }
 
+/***************************/
+/* grid layout for content */
+/***************************/
+
+#home-page.css-grid-wrapper {
+  display: grid;
+  grid-gap: 30px;
+
+  grid-template-columns: minmax(auto, 33%) minmax(auto,33%) minmax(auto,33%);
+  grid-template-rows: minmax(auto, 510px) minmax(auto,auto); 
+  grid-template-areas: 
+    "a a b"
+    "c d b"; 
+
+  /* grid-template-areas:
+    "a b c"
+    "a b d"; */
+}
+
+#home-page .box {
+  background-color: lightgray;
+  /* border: 2px solid rgb(252, 252, 252); */
+  border-radius: 10px;
+  margin: 0 !important;
+  padding: 20px;
+  /* font-size: 150%; */
+}
+
+#home-page .a {
+  grid-area: a;
+}
+#home-page .b {
+  grid-area: b;
+}
+#home-page .c {
+  grid-area: c;
+}
+#home-page .d {
+  grid-area: d;
+}
+      
+/******************/
+/* Not Found Page */
+/******************/
+#not-found-page {
+  font-family: 'Poppins', sans-serif; 
+}
+
+#not-found-page p {
+  font-family: 'Raleway', sans-serif; 
+}
+
+/******************/
+/* Home page      */
+/******************/
+#home-page .vl {
+  border-right: 1px solid lightgrey;
+  /* height: 70vh; */
+  height: 70%;
+  /* position: absolute; */
+  /* left: 25%; */
+  /* margin-left: -3px; */
+  /* top: 20%; */
+}
+
 /*******************/
 /* App Color Theme */
 /*******************/
-/* https://www.canva.com/learn/100-color-combinations/ */
-/* 79. Beyond Black & White (turquoise #31A2AC, lipstick #AF1C1C, grayish while #F0EFF0, old wood #2F2F28) */
-.app-color-1,
-a.app-color-1:hover {
+
+/* black */
+.app-color-black {
+  color:#000;
+}
+.app-bg-color-black {
+  background-color:#000;
+}
+.app-border-color-black {
+  border: 1px solid;
+  border-color:#000;
+}
+
+/*********/
+/* white */
+/* snow  */
+/*********/
+.app-color-white {
+  color:#f9f9f9;
+}
+.app-bg-color-white {
+  background-color:#f9f9f9;
+}
+.app-border-color-white {
+  border: 1px solid;
+  border-color:#f9f9f9;
+}
+
+/**********************/
+/* danger color (red) */
+/**********************/
+.app-color-danger {
+  color: #D72638; 
+}
+.app-bg-color-danger {
+  background-color: #D72638;
+}
+.app-border-color-danger {
+  border: 1px solid;
+  border-color:#D72638;
+}
+
+/*************************/
+/* success color (green) */
+/* ADC698                */
+/*************************/
+.app-color-success {
+  color: #0DAB76;
+}
+.app-bg-color-success {
+  background-color: #0DAB76;
+}
+.app-border-color-success {
+  border: 1px solid;
+  border-color:#0DAB76;
+}
+
+/******************/
+/* primary color */
+/******************/
+.app-color-primary {
+  color: #054A91;
+}
+.app-bg-color-primary {
+  background-color: #054A91;
+}
+.app-border-color-primary {
+  border: 1px solid;
+  border-color: #054A91;
+}
+
+/****************/
+/* accent color */
+/* vl           */
+/****************/
+.app-color-1 {
   color:#EEF1EF;
 }
 .app-bg-color-1 {
@@ -59,96 +186,149 @@ a.app-color-1:hover {
   border-color:#EEF1EF;
 }
 
-.app-color-2,
-a.app-color-2:hover {
-  color: #D72638;
+/****************/
+/* accent color */
+/* sea blue     */
+/****************/
+.app-color-seablue {
+  color: #05668D;
 }
-.app-bg-color-2 {
-  background-color: #D72638;
+.app-bg-color-seablue {
+  background-color: #05668D;
 }
-.app-border-color-2 {
+.app-border-color-seablue {
   border: 1px solid;
-  border-color:#D72638;
+  border-color:#05668D;
 }
 
-.app-color-3,
-a.app-color-3:hover {
-  color: #F0EFF0;
+/****************/
+/* accent color */
+/* orange       */
+/****************/
+.app-color-orange {
+  color: #DE9151;
 }
-.app-bg-color-3 {
-  background-color: #F0EFF0;
+.app-bg-color-orange {
+  background-color: #DE9151;
 }
-.app-border-color-3 {
+.app-border-color-orange {
   border: 1px solid;
-  border-color:#F0EFF0;
+  border-color:#DE9151;
 }
 
-.app-color-4,
-a.app-color-4:hover {
-  color: #2F2F28;
+/****************/
+/* dark gray    */
+/****************/
+.app-color-darkgray {
+  color: #595757;    
 }
-.app-bg-color-4 {
-  background-color: #2F2F28;
+.app-bg-color-darkgray {
+  background-color: #595757;
 }
-.app-border-color-4 {
+.app-border-color-darkgray {
   border: 1px solid;
-  border-color:#2F2F28;
+  border-color:#595757;
 }
 
-.app-color-5,
-a.app-color-5:hover {
-  color: #0DAB76;   /* #6B9080 or #397367 or #0DAB76*/
-}
-.app-bg-color-5 {
-  background-color: #0DAB76;
-}
-.app-border-color-5 {
-  border: 1px solid;
-  border-color:#0DAB76;
-}
-
-.app-color-6,
-a.app-color-6:hover {
-  color: #4392F1;   /* #4392F1 or ? */
-}
-.app-bg-color-6 {
-  background-color: #4392F1;
-}
-.app-border-color-6 {
-  border: 1px solid;
-  border-color:#4392F1;
-}
-
-a:hover {
-  filter: brightness(80%);
-}
-
-button, a {
-  filter: opacity(.8);
-}
-/* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
-/* a > i,button > i {
-  align-items:center;
-  justify-content:center;
-  text-align: center;
-  vertical-align: middle;
-} */
-
-button:hover,
-a:hover {
-  filter: opacity(1.0);
-}
-button:focus,
-a:focus {
-  outline: none;
-}
-
+/****************/
+/* all buttons */
+/****************/
 .app-btn-primary {
+  color: #054A91;
+}
+
+.app-btn-bg-primary {
+  background-color:#054A91;  
+}
+
+.app-btn-border-primary {
+  border: 1px solid #054A91;  
+}
+
+button.btn.app-btn-primary {
+  padding: 10px;
+}
+
+.app-btn-white {
   color: #fff;
-  background-color: #3F88C5;
-  border-color: #3F88C5;
+}
+
+.app-btn-bg-white {
+  background-color:#fff;  
+}
+
+.app-btn-border-white {
+  border: 1px solid #fff;  
+}
+
+button.btn:focus,
+a:focus,
+*:focus {
+  outline: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 p {
   font-size: 14px;
 }
+
+/**************************/
+/* main-nav a and buttons */
+/**************************/
+#main-nav * a,
+#main-nav * button, 
+#main-nav * .vl 
+{
+  background-color: black;
+  color: white;
+  filter: opacity(.8);
+}
+
+#main-nav #brand:hover {
+  color: white;
+  filter: opacity(1.0);
+}
+
+#main-nav * a:hover {
+  color: white;
+  filter: opacity(1.0);
+}
+
+/***************************/
+/* home page a and buttons */
+/***************************/
+#home-page * a
+#home-page * button, 
+#article-detail-section * a.card-btn
+#article-detail-section * button.card-btn, 
+{
+  background-color: #3F88C5;  
+}
+
+#home-page * a:hover,
+#home-page * button:hover, 
+#article-detail-section * a:hover,
+#article-detail-section * button:hover
+{
+  background-color: #054A91;
+  border-color: 1px solid #054A91;
+  color: white;
+  outline: none;
+}
+
+/*****************************/
+/* other pages a and buttons */
+/*****************************/
+#login-page * a:hover,
+#login-page * button:hover,
+#registration-page * a:hover,
+#registration-page * button:hover 
+{
+  background-color: #054A91;
+  border-color: 1px solid #054A91;
+  color: white;
+  outline: none;
+}
+

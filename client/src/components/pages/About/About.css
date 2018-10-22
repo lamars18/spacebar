@@ -1,6 +1,5 @@
 #about-page ul {
   list-style-type: square;
-  /* list-style-image: url(example.png); */
   list-style-position: inside;
 }
 

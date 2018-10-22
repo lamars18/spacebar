@@ -13,7 +13,6 @@ var user = {
   }
 }
 
-
 class Avatar extends React.Component {
   render() {
     var image = this.props.image,
@@ -25,8 +24,8 @@ class Avatar extends React.Component {
     if (!image) return null;
     
     return (
-     <div className="avatar" style={style}>
-           <img src={this.props.image} /> 
+      <div className="avatar" style={style}>
+        <img src={this.props.image} alt="User Profile" /> 
       </div>
     );
   }
@@ -35,27 +34,26 @@ class Avatar extends React.Component {
 class MainPanel extends React.Component {
   render() {
     var info = this.props.info;
+
     if (!info) return null;
     
     return (
-     <div>
+      <div className="bg-white">
         <div className="top">
             <Avatar 
                image={info.photo} 
                width={100}
                height={100}
             /> 
-          <hr />
-         </div>
-          
-          <div>
-            <h2>{info.name}</h2>
-            <h3>{info.location}</h3>
-          </div>
+            <hr className="app-bg-color-black w-75" />    
+        </div>
+   
+        <div>
+          <h2>{info.name}</h2>
+          <h3>{info.location}</h3>
+        </div>
 
-
-            <div>
-         
+        <div>
             <p>{info.gender} | {info.birthday}</p>
         </div>
         
@@ -63,16 +61,15 @@ class MainPanel extends React.Component {
           <h4>Biography</h4>
           <p>{info.bio}</p>
         </div>
-       </div>
+      </div>
     );
   }
 }
 
-
 class UserProfile extends React.Component {
   render() {
     return (
-      <div id="user-profile">
+      <div id="user-profile" className="app-border-color-black m-0">
         <MainPanel info={user.basicInfo} />
       </div>
     )
@@ -80,4 +77,3 @@ class UserProfile extends React.Component {
 }
 export default UserProfile;
 
-// React.render(<UserProfile />, document.getElementById('root'))
