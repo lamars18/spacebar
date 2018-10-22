@@ -80,7 +80,8 @@ class App extends Component {
                 <Route exact path='/register' component={Register} />
                 <Route exact path="/about" component={About} />
                 <Route path='/api/articles' component={Content} />
-                <Route path='/api/scrape' component={Content} />
+                {/* <Route path={`/api/articles/${_id}`} component={Content} /> */}
+                <Route path='/api/articles/scrape' component={Content} />
                 <Route component={NotFound} />
               </Switch>
             </div>

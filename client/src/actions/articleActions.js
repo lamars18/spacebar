@@ -10,10 +10,14 @@ import {
   export const getArticles = () => async dispatch => {
     try {
       const res = await axios.get('/api/articles');
-      dispatch({
-        type: GET_ARTICLES,
-        payload: res.data
-      });
+
+      // if is not empty, dispatch
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: GET_ARTICLES,
+          payload: res.data
+        });
+      }
     } catch (e) {
       console.log(e);
     }
@@ -24,10 +28,13 @@ import {
       const res = await axios.get(
         `/api/articles/${id}`
       );
-      dispatch({
-        type: GET_ARTICLE,
-        payload: res.data
-      });
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: GET_ARTICLE,
+          payload: res.data
+        });
+      }
     } catch (e) {
       console.log(e);
     }
@@ -54,10 +61,13 @@ import {
         '/api/articles',
         article
       );
-      dispatch({
-        type: ADD_ARTICLE,
-        payload: res.data
-      });
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: ADD_ARTICLE,
+          payload: res.data
+        });
+      }
     } catch (e) {
       console.log(e);
     }
@@ -69,10 +79,13 @@ import {
         `/api/articles/${article.id}`,
         article
       );
-      dispatch({
-        type: UPDATE_ARTICLE,
-        payload: res.data
-      });
+
+      if (!(Object.keys(res).length === 0 && res.constructor === Object)) {
+        dispatch({
+          type: UPDATE_ARTICLE,
+          payload: res.data
+        });
+      }
     } catch (e) {
       console.log(e);
     }

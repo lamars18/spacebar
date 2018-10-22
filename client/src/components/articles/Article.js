@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteArticle } from '../../actions/articleActions';
@@ -23,13 +23,13 @@ const cardButtons = [
     "title": "Save",
     "icon": "fas fa-thumbtack"
   },
-  {
-    "id": 3,
-    "type": "button",
-    "datavalue": "delete",
-    "title": "Delete",
-    "icon": "far fa-trash-alt"
-  },
+  // {
+  //   "id": 3,
+  //   "type": "button",
+  //   "datavalue": "delete",
+  //   "title": "Delete",
+  //   "icon": "far fa-trash-alt"
+  // },
   {
     "id": 4,
     "type": "button",
@@ -81,12 +81,12 @@ class Article extends Component {
             style={{cursor: 'pointer', float: 'right'}}
             onClick={this.onDeleteClick.bind(this, _id)}
           ></i>
-          <Link to={`api/articles/${_id}`}>
+          {/* <Link to={`api/articles/${_id}`}>
             <i 
-              className="fas fa-pencil-alt app-color-2" 
+              className="fa fa-search app-color-primary" 
               style={{cursor: 'pointer', float: 'right', marginRight: '1rem'}}
             ></i>
-          </Link>
+          </Link> */}
         </h6>
 
         <small className="text-left text-muted">By {author}, {this.formatDate(date)}</small>
@@ -106,7 +106,7 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-2 bg-white app-color-2 `}
+                      className={`card-btn mt-auto app-border-color-primary bg-white app-color-primary `}
                       title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -122,7 +122,7 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      className={`card-btn app-border-color-2 bg-white app-color-2 ${cardBtn.datavalue}`}
+                      className={`card-btn ml-2 app-border-color-primary bg-white app-color-primary ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}

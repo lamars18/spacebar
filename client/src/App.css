@@ -38,13 +38,27 @@ body {
 
 #home-page.css-grid-wrapper {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: [col1-start] auto  [col2-start] auto  [col3-start] auto [col3-end];
-  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+  grid-gap: 30px;
+  /* grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto [col3-end];
+  grid-template-rows:    [row1-start] auto [row2-start] auto [row2-end];  */
+
+  /* alternate   */
+  grid-template-columns: minmax(auto, 33%) minmax(auto,33%) minmax(auto,33%);
+  grid-template-rows: minmax(auto, 510px) minmax(auto,auto); 
+  /* grid-template-rows: repeat(2, auto);  */
+  /* height: 500px;
+  width: 500px; */
+  grid-template-areas: 
+    "a a b"
+    "c d b"; 
+
+  /* grid-template-areas:
+    "a b c"
+    "a b d"; */
 }
 
 #home-page .box {
-  background-color: white;
+  background-color: lightgray;
   /* color: #000; */
   border-radius: 5px;
   margin: 0 !important;
@@ -53,20 +67,28 @@ body {
 }
 
 #home-page .a {
-  grid-column: col1-start / col3-start;
-  grid-row: row1-start ;
+  /* grid-column: col1-start / col3-start;
+  grid-row: row1-start ; */
+
+  grid-area: a;
 }
 #home-page .b {
-  grid-column: col3-start ;
-  grid-row: row1-start / row2-end;
+  /* grid-column: col3-start ;
+  grid-row: row1-start / row2-end; */
+
+  grid-area: b;
 }
 #home-page .c {
-  grid-column: col1-start;
-  grid-row: row2-start ;
+  /* grid-column: col1-start;
+  grid-row: row2-start ; */
+
+  grid-area: c;
 }
 #home-page .d {
-  grid-column: col2-start ;
-  grid-row: row2-start ;
+  /* grid-column: col2-start ;
+  grid-row: row2-start ; */
+
+  grid-area: d;
 }
       
 /******************/
@@ -160,14 +182,14 @@ a.app-color-success:hover {
 /******************/
 /* primary color */
 /******************/
-.app-color-2,
-a.app-color-2:hover {
+.app-color-primary,
+a.app-color-primary:hover {
   color: #3F88C5;
 }
-.app-bg-color-2 {
+.app-bg-color-primary {
   background-color: #3F88C5;
 }
-.app-border-color-2 {
+.app-border-color-primary {
   border: 1px solid;
   border-color: #3F88C5;
 }
@@ -220,37 +242,16 @@ a.app-color-darkgray:hover {
 }
 
 /****************/
-
+/* all buttons */
+/****************/
 .app-btn-primary {
   color: #fff;
-  background-color: #05668D;
-  border-color: #05668D;
-}
-
-a:hover {
-  filter: brightness(80%);
+  background-color: #054A91;
+  border-color: #054A91;
 }
 
 button.btn.app-btn-primary {
   padding: 10px;
-}
-
-button, a,
-#main-nav .vl 
-{
-  filter: opacity(.8);
-}
-/* none of the below had any impact on alignment for the a icon to line up, used mt-3 instead
-/* a > i,button > i {
-  align-items:center;
-  justify-content:center;
-  text-align: center;
-  vertical-align: middle;
-} */
-
-button:hover,
-a:hover {
-  filter: opacity(1.0);
 }
 
 button:focus,
@@ -261,3 +262,33 @@ a:focus {
 p {
   font-size: 14px;
 }
+
+/*********************/
+/* nav a and buttons */
+/*********************/
+#main-nav a,
+#main-nav button, 
+#main-nav .vl 
+{
+  filter: opacity(.8);
+}
+
+#main-nav a:hover,
+#main-nav button:hover {
+  filter: brightness(80%);
+}
+
+/***********************/
+/* Pages a and buttons */
+/***********************/
+#home-page * a
+#home-page * button, 
+{
+  background-color: #3F88C5;  
+}
+
+#home-page * a:hover,
+#home-page * button:hover {
+  background-color: #054A91;  
+}
+

@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="home-page" className="mt-4 css-grid-wrapper mx-5">
+        <div id="home-page" className="mt-4 css-grid-wrapper app-bg-color-3 mx-5 mb-4">
 
           {/* Profile */}
           <div id="profile-section" className="box a">
@@ -26,8 +26,10 @@ class Home extends Component {
 
           {/* Blog */}
           <div id="blog-section" className="box d">
-            <h6 className="app-display-4">Posts</h6>
-
+            <h6 className="app-display-4">Blog</h6>
+            {/* <div> */}
+              <iframe title="blog-area" src ="https://coderdevelopers.blogspot.com/" width="100%" height="100%"> </iframe>
+            {/* </div> */}
           </div>
 
           {/* Chat */}
