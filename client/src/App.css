@@ -281,11 +281,11 @@ p {
 /***********************/
 /* Pages a and buttons */
 /***********************/
-#home-page * a
+/* #home-page * a
 #home-page * button, 
 {
   background-color: #3F88C5;  
-}
+} */
 
 #home-page * a:hover,
 #home-page * button:hover {
