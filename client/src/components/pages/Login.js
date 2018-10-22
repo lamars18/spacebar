@@ -82,7 +82,7 @@ class Login extends Component {
                         {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn app-btn-primary">
+                        <button type="submit" className="btn app-btn-primary app-btn-bg-white app-btn-border-primary">
                             Login User
                     </button>
                     </div>

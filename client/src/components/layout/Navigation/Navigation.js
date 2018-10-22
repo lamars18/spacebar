@@ -9,8 +9,8 @@ const Navigation = props => {
     return (
         <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-black app-color-white px-5" >
             {/* <div className="container"> */}
-                <a href="/" className="navbar-brand m-0 px-4 py-2 app-color-white">
-                    <i className="fas fa-rocket fa-lg mr-2"></i>
+                <a id="brand" href="/" className="navbar-brand m-0 px-4 py-2 app-color-white">
+                    <i className="fas fa-rocket fa-lg mr-2 app-color-white"></i>
                     {branding}
                 </a>
                 <div className="ml-auto">

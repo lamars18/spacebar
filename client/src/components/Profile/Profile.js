@@ -38,16 +38,16 @@ class MainPanel extends React.Component {
     if (!info) return null;
     
     return (
-      <div>
+      <div className="bg-white">
         <div className="top">
             <Avatar 
                image={info.photo} 
                width={100}
                height={100}
             /> 
-          <hr className="app-bg-color-white w-100" />
+            <hr className="app-bg-color-black w-75" />    
         </div>
-          
+   
         <div>
           <h2>{info.name}</h2>
           <h3>{info.location}</h3>

@@ -39,15 +39,9 @@ body {
 #home-page.css-grid-wrapper {
   display: grid;
   grid-gap: 30px;
-  /* grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto [col3-end];
-  grid-template-rows:    [row1-start] auto [row2-start] auto [row2-end];  */
 
-  /* alternate   */
   grid-template-columns: minmax(auto, 33%) minmax(auto,33%) minmax(auto,33%);
   grid-template-rows: minmax(auto, 510px) minmax(auto,auto); 
-  /* grid-template-rows: repeat(2, auto);  */
-  /* height: 500px;
-  width: 500px; */
   grid-template-areas: 
     "a a b"
     "c d b"; 
@@ -59,35 +53,23 @@ body {
 
 #home-page .box {
   background-color: lightgray;
-  /* color: #000; */
-  border-radius: 5px;
+  /* border: 2px solid rgb(252, 252, 252); */
+  border-radius: 10px;
   margin: 0 !important;
   padding: 20px;
   /* font-size: 150%; */
 }
 
 #home-page .a {
-  /* grid-column: col1-start / col3-start;
-  grid-row: row1-start ; */
-
   grid-area: a;
 }
 #home-page .b {
-  /* grid-column: col3-start ;
-  grid-row: row1-start / row2-end; */
-
   grid-area: b;
 }
 #home-page .c {
-  /* grid-column: col1-start;
-  grid-row: row2-start ; */
-
   grid-area: c;
 }
 #home-page .d {
-  /* grid-column: col2-start ;
-  grid-row: row2-start ; */
-
   grid-area: d;
 }
       
@@ -120,8 +102,7 @@ body {
 /*******************/
 
 /* black */
-.app-color-black,
-a.app-color-black:hover {
+.app-color-black {
   color:#000;
 }
 .app-bg-color-black {
@@ -136,8 +117,7 @@ a.app-color-black:hover {
 /* white */
 /* snow  */
 /*********/
-.app-color-white,
-a.app-color-white:hover {
+.app-color-white {
   color:#f9f9f9;
 }
 .app-bg-color-white {
@@ -151,8 +131,7 @@ a.app-color-white:hover {
 /**********************/
 /* danger color (red) */
 /**********************/
-.app-color-danger,
-a.app-color-danger:hover {
+.app-color-danger {
   color: #D72638; 
 }
 .app-bg-color-danger {
@@ -167,8 +146,7 @@ a.app-color-danger:hover {
 /* success color (green) */
 /* ADC698                */
 /*************************/
-.app-color-success,
-a.app-color-success:hover {
+.app-color-success {
   color: #0DAB76;
 }
 .app-bg-color-success {
@@ -182,28 +160,26 @@ a.app-color-success:hover {
 /******************/
 /* primary color */
 /******************/
-.app-color-primary,
-a.app-color-primary:hover {
-  color: #3F88C5;
+.app-color-primary {
+  color: #054A91;
 }
 .app-bg-color-primary {
-  background-color: #3F88C5;
+  background-color: #054A91;
 }
 .app-border-color-primary {
   border: 1px solid;
-  border-color: #3F88C5;
+  border-color: #054A91;
 }
 
 /****************/
 /* accent color */
 /* vl           */
 /****************/
-.app-color-1,
-a.app-color-1:hover {
+.app-color-1 {
   color:#EEF1EF;
 }
 .app-bg-color-1 {
-  background-color:rgba(238,241,239,.9);
+  background-color:#EEF1EF;
 }
 .app-border-color-1 {
   border: 1px solid;
@@ -214,23 +190,36 @@ a.app-color-1:hover {
 /* accent color */
 /* sea blue     */
 /****************/
-.app-color-2,
-a.app-color-2:hover {
+.app-color-seablue {
   color: #05668D;
 }
-.app-bg-color-2 {
+.app-bg-color-seablue {
   background-color: #05668D;
 }
-.app-border-color-2 {
+.app-border-color-seablue {
   border: 1px solid;
   border-color:#05668D;
 }
 
 /****************/
+/* accent color */
+/* orange       */
+/****************/
+.app-color-orange {
+  color: #DE9151;
+}
+.app-bg-color-orange {
+  background-color: #DE9151;
+}
+.app-border-color-orange {
+  border: 1px solid;
+  border-color:#DE9151;
+}
+
+/****************/
 /* dark gray    */
 /****************/
-.app-color-darkgray,
-a.app-color-darkgray:hover {
+.app-color-darkgray {
   color: #595757;    
 }
 .app-bg-color-darkgray {
@@ -244,76 +233,102 @@ a.app-color-darkgray:hover {
 /****************/
 /* all buttons */
 /****************/
-.app-btn-primary,
+.app-btn-primary {
+  color: #054A91;
+}
+
 .app-btn-bg-primary {
-  color: #fff;
-  background-color: #054A91;
-  border-color: 1px solid #054A91;
+  background-color:#054A91;  
+}
+
+.app-btn-border-primary {
+  border: 1px solid #054A91;  
 }
 
 button.btn.app-btn-primary {
   padding: 10px;
 }
 
-button:focus,
-a:focus {
-  outline: none;
+.app-btn-white {
+  color: #fff;
+}
+
+.app-btn-bg-white {
+  background-color:#fff;  
+}
+
+.app-btn-border-white {
+  border: 1px solid #fff;  
+}
+
+button.btn:focus,
+a:focus,
+*:focus {
+  outline: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 p {
   font-size: 14px;
 }
 
-/*********************/
-/* nav a and buttons */
-/*********************/
-#main-nav a,
-#main-nav button, 
-#main-nav .vl 
+/**************************/
+/* main-nav a and buttons */
+/**************************/
+#main-nav * a,
+#main-nav * button, 
+#main-nav * .vl 
 {
+  background-color: black;
+  color: white;
   filter: opacity(.8);
 }
 
-#main-nav a:hover,
-#main-nav button:hover {
-  /* filter: brightness(80%); */
+#main-nav #brand:hover {
+  color: white;
+  filter: opacity(1.0);
+}
+
+#main-nav * a:hover {
+  color: white;
   filter: opacity(1.0);
 }
 
 /***************************/
 /* home page a and buttons */
 /***************************/
-/* #home-page * a
+#home-page * a
 #home-page * button, 
+#article-detail-section * a.card-btn
+#article-detail-section * button.card-btn, 
 {
   background-color: #3F88C5;  
-} */
+}
 
 #home-page * a:hover,
 #home-page * button:hover, 
+#article-detail-section * a:hover,
+#article-detail-section * button:hover
 {
-  color: #054A91;  
-  border-color: #054A91;
+  background-color: #054A91;
+  border-color: 1px solid #054A91;
+  color: white;
+  outline: none;
 }
 
 /*****************************/
 /* other pages a and buttons */
 /*****************************/
-/* #login-page * a
-#login-page * button, 
-#registration-page * a
-#registration-page * button, 
-{
-  background-color: #3F88C5; 
-  border: solid 1px #054A91;
-} */
-
 #login-page * a:hover,
 #login-page * button:hover,
 #registration-page * a:hover,
 #registration-page * button:hover 
 {
-  color: #054A91;
-  background-color: white;  
-  border: 1px solid #054A91;
+  background-color: #054A91;
+  border-color: 1px solid #054A91;
+  color: white;
+  outline: none;
 }
+

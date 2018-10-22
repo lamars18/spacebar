@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Articles from '../../articles/Articles';
+import Wrapper from '../../layout/Wrapper';
 import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
 import UserProfile from '../../Profile/Profile';
@@ -14,7 +15,45 @@ class Home extends Component {
           {/* Profile */}
           <div id="profile-section" className="box a">
             {/* <h6 className="app-display-4">User Profile</h6> */}
-            <UserProfile />
+            <div className="d-flex justify-content-around">
+              <UserProfile />
+
+<div className="ml-4">
+  <ul className="list-group">
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+    <li className="list-group-item">
+      <div className="">
+        <h4>Announcement 1</h4>
+        <p>
+          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+        </p>
+        {/* <a href="/">Link</a> */}
+      </div>
+    </li>
+  </ul>
+</div> 
+
+            </div>
             {/* <div className="vl"></div> */}
           </div>
 

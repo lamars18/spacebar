@@ -72,6 +72,7 @@ class App extends Component {
               message="Discover what's out there."
             ></Header>
 
+{/* app-bg-color-white or bg_white*/}
             <div className="site-content app-bg-color-white">
               <Switch className="site-content">
                 <Route exact path='/' component={Home} />

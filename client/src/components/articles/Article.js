@@ -92,7 +92,7 @@ class Article extends Component {
         <small className="text-left text-muted">By {author}, {this.formatDate(date)}</small>
 
         {showArticleInfo ? (
-          <div> 
+          <div id="article-detail-section"> 
             <hr></hr>
             <p className="card-text">{summary}</p>
             <div className="mt-auto">
@@ -106,7 +106,7 @@ class Article extends Component {
                     <a 
                       key={linkBtn.id}
                       href={url} 
-                      className={`card-btn mt-auto app-border-color-primary bg-white app-color-primary `}
+                      className={`card-btn mt-auto app-btn-primary app-btn-bg-white app-btn-border-primary`}
                       title={linkBtn.title}
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -122,7 +122,7 @@ class Article extends Component {
                     <BtnRound
                       id={cardBtn.id}
                       key={cardBtn.id}
-                      className={`card-btn ml-2 app-border-color-primary bg-white app-color-primary ${cardBtn.datavalue}`}
+                      className={`card-btn ml-2 app-btn-primary app-btn-bg-white app-btn-border-primary ${cardBtn.datavalue}`}
                       title={cardBtn.title}
                       icon={cardBtn.icon}
                       url= {url ? url : null}
