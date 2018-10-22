@@ -46,7 +46,7 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 articles: state.articles.map(
-                    article => article._id === action.payload.id
+                    article => article._id === action.payload._id
                         ? (article = action.payload)
                         : article
                 )

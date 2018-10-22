@@ -324,7 +324,10 @@ p {
 #login-page * a:hover,
 #login-page * button:hover,
 #registration-page * a:hover,
-#registration-page * button:hover 
+#registration-page * button:hover,
+.edit-page * a:hover,
+.edit-page * button:hover,
+.edit-page * input[type="submit"]:hover
 {
   background-color: #054A91;
   border-color: 1px solid #054A91;

@@ -76,7 +76,7 @@ import {
   export const updateArticle = article => async dispatch => {
     try {
       const res = await axios.put(
-        `/api/articles/${article.id}`,
+        `/api/articles/${article._id}`,
         article
       );
 
