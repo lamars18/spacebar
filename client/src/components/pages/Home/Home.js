@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Articles from '../../articles/Articles';
 import ChatApp from '../../ChatApp/ChatApp';
 import "./Home.css";
+import UserProfile from '../../Profile/Profile';
 
 class Home extends Component {
 
@@ -12,7 +13,7 @@ class Home extends Component {
           {/* Profile */}
           <div id="profile-section" className="col-md-2 container">
             <h6 className="app-display-4">User Profile</h6>
-
+            <UserProfile />
           </div>
           {/* News Feed */}
           <div id="newsfeed-section" className="col-md-3 home">

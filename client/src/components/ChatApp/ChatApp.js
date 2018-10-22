@@ -3,7 +3,7 @@ import UsernameForm from './UsernameForm'
 import ChatScreen from './ChatScreen'
 // import axios from 'axios';
 // var Pusher = require('pusher');
-require('dotenv').config( );
+// require('dotenv').config( );
 
 // const PUSHER_URL = process.env.PUSHER_URL || "http://localhost:3001";
 
@@ -47,11 +47,11 @@ class ChatApp extends Component {
 
     // below worked local
     // fetch('http://localhost:3001/users', {
-    fetch('chat/users', {
+    // fetch('/users', {
 
     // axios.post('http://localhost:3001/chat/users', username, axiosConfig) 
     // axios.post('/chat/users', JSON.stringify({ username }), axiosConfig) 
-    // fetch('/chat/users', {
+    fetch('/chat/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

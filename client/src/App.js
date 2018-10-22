@@ -15,6 +15,7 @@ import Footer from './components/layout/Footer';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 
+
 // pages
 import About from './components/pages/About';
 import Home from './components/pages/Home';
@@ -90,4 +91,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

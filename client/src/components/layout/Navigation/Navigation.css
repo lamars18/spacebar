@@ -3,5 +3,13 @@
     font-size: 1.5rem;
     background-color: black;
     color: #1D2731;
-    position:fixed;    
+    /* position:fixed;     */
+}
+
+#logout {
+    margin-left: 1000px;
+}
+
+#about {
+    margin-left: 800px
 }
