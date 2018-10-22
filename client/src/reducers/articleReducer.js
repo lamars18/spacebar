@@ -3,7 +3,8 @@ import {
     GET_ARTICLE,
     ADD_ARTICLE,
     UPDATE_ARTICLE,
-    DELETE_ARTICLE
+    DELETE_ARTICLE,
+    SCRAPE_ARTICLES
 } from '../actions/types';
 
 const initialState = {
@@ -14,6 +15,12 @@ const initialState = {
 export default function(state = initialState, action) {
     console.log('action type is:  ' + action.type);
     switch (action.type) {
+        case SCRAPE_ARTICLES:
+            console.log('made it to SCRAPE_ARTICLES');
+            return {
+                ...state,
+                articles: action.payload
+            };
         case GET_ARTICLES:
             console.log('made it to GET_ARTICLES');
             return {

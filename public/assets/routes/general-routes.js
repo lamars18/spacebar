@@ -154,6 +154,7 @@ module.exports = function(app) {
     
     // calls function to scrape the Smashing Magazine site, which also contains a callback function to load the data to Mongo
     scrapeSmashingMagazineSite(loadScrapedData)
+    console.log("after scrape of data but just before redirect to get from the store.");
     res.redirect("/api/articles");
   });
   
