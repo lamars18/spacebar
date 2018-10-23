@@ -44,6 +44,9 @@ import './App.css';
 //   }
 // }
 
+// store.dispatch({type:AUTH,auth:isUserAuthorized()});
+import * as serviceWorker from './serviceWorker';
+serviceWorker.unregister();
 
 //////////////////////////////////////////////
 // App component

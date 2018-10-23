@@ -23,30 +23,36 @@ class Home extends Component {
   <ul className="list-group">
     <li className="list-group-item">
       <div className="">
-        <h4>Announcement 1</h4>
+        {/* <h4>Announcement 1</h4> */}
         <p>
-          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          Check out the headlines and see what's trending.
         </p>
         {/* <a href="/">Link</a> */}
       </div>
     </li>
     <li className="list-group-item">
       <div className="">
-        <h4>Announcement 1</h4>
+        {/* <h4>Announcement 1</h4> */}
         <p>
-          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          Chat with your friends and see who's online!
         </p>
         {/* <a href="/">Link</a> */}
       </div>
     </li>
     <li className="list-group-item">
       <div className="">
-        <h4>Announcement 1</h4>
+        {/* <h4>Announcement 1</h4> */}
         <p>
-          <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet. Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!
+          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          Be on the lookout for monthly feature updates such as:  
+            Chat component typing indicator.
+            Chat component clear chat room messages
+            Passport reset password feature.
+            Article add and delete comments.
+            Blog feature.
+            Site will allow user page customization.
         </p>
         {/* <a href="/">Link</a> */}
       </div>
@@ -61,7 +67,7 @@ class Home extends Component {
           {/* News Feed */}
           <div id="newsfeed-section" className="box b">
             <h6 className="app-display-4">Headlines
-              <a key='scrape' href="/api/articles/scrape"  className="btn app-btn-primary app-btn-bg-white app-btn-border-primary right-button" title="Scrape Headlines" role="button">
+              <a href="/api/articles/scrape"  target="_self" className="btn app-btn-primary app-btn-bg-white app-btn-border-primary right-button" title="Scrape Headlines" role="button">
                 <i className="fa fa-search" /> 
               </a>
             </h6>
