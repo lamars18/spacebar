@@ -6,61 +6,98 @@ import { logoutUser } from '../../../actions/authentication'
 import "./Navigation.css"
 
 class Navigation extends Component {
+
     onLogoutClick(e) {
         e.preventDefault();
         this.props.logoutUser();
     }
 
     render() {
-        const { isAuthenticated, user } = this.props.auth;
+        // user
+        const { isAuthenticated } = this.props.auth;
+        const { branding } = this.props;
 
         const authLinks = (
-            <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 px-5 app-color-1">
-                <div
-                    onClick={this.onLogoutClick.bind(this)}
-                    className="nav-link"
+
+            <React.Fragment>
+                <li 
+                    className="nav-item"
                 >
-                    <Link to="/login" className="nav-link app-color-1" id = "logout">
-                        <div className="btn app-btn-primary">
-                            <i className="fas fa-user-minus" /> Logout
-                                </div>
+                    <Link to="/" className="nav-link app-color-white">
+                        <i className="fas fa-home" /> Home
                     </Link>
-                </div>
-            </nav>
+                </li>
+
+                {/* vertical separator */}
+                {/* <div className="vl ml-2 mr-2 app-color-white"></div> */}
+
+                <li
+                    onClick={this.onLogoutClick.bind(this)}
+                    className="nav-item"
+                >
+                    <Link to="/login" className="nav-link app-color-white" id = "logout">
+                        {/* <div className="btn app-btn-primary"> */}
+                            <i className="fas fa-sign-out-alt" /> Logout
+                        {/* </div> */}
+                    </Link>
+                </li>
+
+            </React.Fragment>
 
         );
 
         const guestLinks = (
-            <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 px-5 app-color-1">
 
-                <Link to="/about" className="nav-link app-color-1" id="about">
-                    <div className="btn app-btn-primary">
-                        <i className="fas fa-question" /> About
-                            </div>
-                </Link>
-                <Link to="/login" className="nav-link app-color-1">
-                    <div className="btn app-btn-primary">
-                        <i className="fas fa-sign-in-alt" /> Login
-                                </div>
-                </Link>
-                <Link to="/register" className="nav-link app-color-1">
-                    <div className="btn app-btn-primary">
-                        <i className="fas fa-user-plus" /> Sign-up
-                                </div>
-                </Link>
-            </nav>
+            <React.Fragment>
+                <li className="nav-item ml-2">
+                    <Link to="/register" className="nav-link app-color-white">
+                        {/* <div className="btn app-btn-primary"> */}
+                            <i className="fas fa-user-plus" /> Sign-up
+                        {/* </div> */}
+                    </Link>
+                </li>
+                <li className="nav-item ml-2">
+                    <Link to="/login" className="nav-link app-color-white">
+                        {/* <div className="btn app-btn-primary"> */}
+                            <i className="fas fa-sign-in-alt" /> Login
+                        {/* </div> */}
+                    </Link>
+                </li>
+
+                {/* vertical separator */}
+                {/* <div className="vl ml-2 mr-2 app-color-white"></div> */}
+
+            </React.Fragment>
+
         );
+
         return (
-            <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-3 py-0 px-0 app-color-1">
-                <div className="container">
 
-                    {isAuthenticated ? authLinks : guestLinks}
+            <nav id="main-nav" className="navbar navbar-expand-sm app-bg-color-black py-0 px-5 app-color-white">
+                {/* branding */}
+                <a id="brand" href="/" className="navbar-brand m-0 px-4 py-2 app-color-white">
+                    <i className="fas fa-rocket fa-lg mr-2 app-color-white"></i>
+                    {branding}
+                </a>
+            
+                <div className="ml-auto">
 
-                    {/* <a href="/">Home</a> */}
+                    <ul className="navbar-nav mr-auto">
+
+                        {isAuthenticated ? authLinks : guestLinks}
+
+                        <li
+                            className="nav-item"
+                        >
+                            <Link to="/about" className="nav-link app-color-white" id="about">
+                                <i className="fas fa-question" /> About
+                            </Link>
+                        </li>
+
+                    </ul>
+
                 </div>
-
             </nav>
-
 
         )
     }

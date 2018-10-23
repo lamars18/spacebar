@@ -42,13 +42,11 @@ body {
 
   grid-template-columns: minmax(auto, 33%) minmax(auto,33%) minmax(auto,33%);
   grid-template-rows: minmax(auto, 510px) minmax(auto,auto); 
+  /* grid-template-rows: minmax(auto, auto) minmax(auto,auto);  */
+
   grid-template-areas: 
     "a a b"
     "c d b"; 
-
-  /* grid-template-areas:
-    "a b c"
-    "a b d"; */
 }
 
 #home-page .box {
@@ -335,3 +333,9 @@ p {
   outline: none;
 }
 
+.list-group-item { 
+  overflow: hidden; 
+  /* overflow-y: auto; */
+  text-overflow: ellipsis; 
+  /* white-space: nowrap; */
+}
