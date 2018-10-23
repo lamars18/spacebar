@@ -61,9 +61,9 @@ class Home extends Component {
           {/* News Feed */}
           <div id="newsfeed-section" className="box b">
             <h6 className="app-display-4">Headlines
-              {/* <a key='scrape' href="/api/articles/scrape"  className="btn app-btn-primary app-btn-bg-white app-btn-border-primary float-right" title="Scrape Headlines" role="button">
+              <a key='scrape' href="/api/articles/scrape"  className="btn app-btn-primary app-btn-bg-white app-btn-border-primary right-button" title="Scrape Headlines" role="button">
                 <i className="fa fa-search" /> 
-              </a> */}
+              </a>
             </h6>
             <Articles />
           </div>

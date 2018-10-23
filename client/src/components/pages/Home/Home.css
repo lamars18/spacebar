@@ -1,1 +1,16 @@
 
+#newsfeed-section {
+    position: relative;
+ }
+ 
+ #newsfeed-section * .right-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+ }    
+ 
+ #newsfeed-section * .left-button {
+    position: absolute;
+    left: 0;
+    top: 15px;
+ }

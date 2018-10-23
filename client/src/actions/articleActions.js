@@ -3,10 +3,24 @@ import {
     DELETE_ARTICLE,
     ADD_ARTICLE,
     GET_ARTICLE,
-    UPDATE_ARTICLE
+    UPDATE_ARTICLE,
+    SCRAPE_ARTICLES
   } from './types';
   import axios from 'axios';
   
+  export const scrapeArticles = () => async dispatch => {
+    try {
+      await axios.get('/api/articles/scrape');
+
+      dispatch({
+        type: SCRAPE_ARTICLES,
+        payload: null
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   export const getArticles = () => async dispatch => {
     try {
       const res = await axios.get('/api/articles');
