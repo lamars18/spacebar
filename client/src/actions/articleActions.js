@@ -10,11 +10,11 @@ import {
   
   export const scrapeArticles = () => async dispatch => {
     try {
-      await axios.get('https://gt-spacebar.herokuapp.com/api/articles/scrape');
+      const res = await axios.get('/api/scrape');
 
       dispatch({
         type: SCRAPE_ARTICLES,
-        payload: null
+        payload: res.data
       });
     } catch (e) {
       console.log(e);
