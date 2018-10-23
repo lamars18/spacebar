@@ -6,7 +6,7 @@ import Articles from '../../articles/Articles';
 import "./Content.css";
 
 class Content extends Component {
-
+//test
   render() {
     return (
       <section className="content-section">
