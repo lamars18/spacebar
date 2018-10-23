@@ -23,9 +23,9 @@ class Home extends Component {
   <ul className="list-group">
     <li className="list-group-item">
       <div className="">
-        {/* <h4>Announcement 1</h4> */}
+        <h4>WHAT'S TRENDING</h4>
         <p>
-          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          <img src="https://tse3.mm.bing.net/th?id=OIP.m2mhfs_-d653oZYi0VO4vgHaEK&pid=15.1&P=0&w=75&h=75" alt="" className="img-responsive float-left mr-3"/>
           Check out the headlines and see what's trending.
         </p>
         {/* <a href="/">Link</a> */}
@@ -33,9 +33,9 @@ class Home extends Component {
     </li>
     <li className="list-group-item">
       <div className="">
-        {/* <h4>Announcement 1</h4> */}
+        <h4>WHO'S ONLINE</h4>
         <p>
-          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          <img src="https://tse4.mm.bing.net/th?id=OIP.yDVWwsoGBF4akjL9Xa-QSwHaD_&pid=15.1&P=0&w=75&h=75" alt="" className="img-responsive float-left mr-3"/>
           Chat with your friends and see who's online!
         </p>
         {/* <a href="/">Link</a> */}
@@ -43,9 +43,9 @@ class Home extends Component {
     </li>
     <li className="list-group-item">
       <div className="">
-        {/* <h4>Announcement 1</h4> */}
+        <h4>WHAT'S UP NEXT</h4>
         <p>
-          {/* <img src="http://baconmockup.com/50/50" alt="" className="img-responsive float-left mr-3"/> */}
+          <img src="https://tse1.mm.bing.net/th?id=OIP.wbETZnPGF5LKfo1ZswRCwwHaHa&pid=15.1&P=0&w=75&h=75" alt="" className="img-responsive float-left mr-3"/>
           Be on the lookout for monthly feature updates such as:  
             Chat component typing indicator.
             Chat component clear chat room messages
