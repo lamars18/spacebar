@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 
 export const registerUser = (user, history) => dispatch => {
     axios.post('/register', user)
-            .then(res => history.push('/'))
+            .then(res => history.push('/login'))
             
             .catch(err => {
                 dispatch({
@@ -55,3 +55,4 @@ export const logoutUser = () => dispatch => {
     // Set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
   };
+
