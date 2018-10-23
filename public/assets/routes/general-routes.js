@@ -149,13 +149,14 @@ module.exports = function(app) {
   });
 
   // GET scrape route to retrieve articles
-  app.get("http://localhost:5000//api/articles/scrape", function(req, res) {
+  app.get("/api/scrape", function(req, res) {
     console.log("route: in scrape articles");
     
     // calls function to scrape the Smashing Magazine site, which also contains a callback function to load the data to Mongo
     scrapeSmashingMagazineSite(loadScrapedData)
     console.log("after scrape of data but just before redirect to get from the store.");
     res.redirect("/api/articles");
+    // return res.status(200).send({message: "data scraped"});
   });
   
   // GET clear all articles (and their associated comments) route

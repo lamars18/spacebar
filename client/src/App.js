@@ -82,14 +82,13 @@ class App extends Component {
             <div className="site-content app-bg-color-white">
               <Switch className="site-content">
                 <Route exact path='/' component={Home} />
+                <Route exact path='/api/scrape' component={Home} />
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/logout' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/api/articles/edit/:id" component={EditArticle} />
                 <Route exact path='/api/articles' component={Home} />
-                {/* <Route path={`/api/articles/${_id}`} component={Content} /> */}
-                {/* <Route path='/api/articles/scrape' component={Content} /> */}
                 <Route component={NotFound} />
               </Switch>
             </div>
