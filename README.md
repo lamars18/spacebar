@@ -1,9 +1,9 @@
 # SpaceBar
 
-SpaceBar is a TBD
+SpaceBar is a customizable social media site. 
 
 **Problem it solves:** \
-SpaceBar allows users to TBD. \
+SpaceBar allows users to register, login, logout, chat, view articles, comment on articles, delete articles, post to a blog and view announcements. Future developments will include the ability to create unique user profiles. 
 **How solved:** \
 The app TBD. \
 **Technical approach:** \
@@ -23,8 +23,8 @@ To get a development environment up and running, clone the repository locally.
 First, start MongoDB by invoking mongod.exe from the command line.
 
 Steps:
-1. git clone https://github.com/mnevins09/Project-Three.git
-2. cd Project-Three
+1. git clone 
+2. cd spacebar
 3. yarn install
 4. cd client
 5. yarn install
@@ -61,8 +61,9 @@ This is version 0.1
 
 ## Authors
 
-* **Jenni Coleman** - *Initial development*
-
+* **Shetia Butler Lamar** - 
+* **Jenni Coleman** - 
+* **Mathieu Nevins* - 
 ## License
 
 This project is licensed under TBD
